@@ -38,18 +38,18 @@
 
             var x = [];
             var y = [];
-            myChart.data.labels = y;
-            myChart.data.datasets[0].data = x;
+            //myChart.data.labels = y;
+            //myChart.data.datasets[0].data = x;
 
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: x,
+                    labels: y,
                     datasets: [{
                         label: 'pmf',
                         lineTension: 0,
-                        data: y,
+                        data: x,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                         ],
@@ -87,6 +87,7 @@
                 var select = weekArray[day]+'_'+time;//之後用來尋找csv列的名字的變數
                 console.log(time);
                 console.log(select);
+
                 
                 //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
                 var request = new XMLHttpRequest();
@@ -96,6 +97,9 @@
                     if (request.status == 200) {
                         var json = JSON.parse(request.responseText);
                         console.log(json);
+
+                        x.length = 0;
+                        y.length = 0;
 
                         var len_json = Object.keys(json).length; //宣告json長度
                         for (i=0;i<len_json;i++){
