@@ -92,9 +92,9 @@
                 console.log(time);
                 console.log(select);
                 
-                var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
+                //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
                 var request = new XMLHttpRequest();
-                request.open("get", url);
+                request.open("get", "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json");
                 request.send(null);
                 request.onload = function () {
                     if (request.status == 200) {
