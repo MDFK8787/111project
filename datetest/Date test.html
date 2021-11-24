@@ -38,6 +38,7 @@
 
             var x = [];
             var y = [];
+            var xx = [0];//作為被x減去的陣列,要得出columns全部加起來=1
             //myChart.data.labels = y;
             //myChart.data.datasets[0].data = x;
 
@@ -98,8 +99,9 @@
                         var json = JSON.parse(request.responseText);
                         console.log(json);
 
-                        x.length = 0;
-                        y.length = 0;
+                        x.length = 0;//讓上一個被輸入的圖表y資料被清除
+                        y.length = 0;//讓上一個被輸入的圖表x資料被清除
+                        xx = [0];
 
                         var len_json = Object.keys(json).length; //宣告json長度
                         for (i=0;i<len_json;i++){
@@ -110,7 +112,8 @@
                             
                             //console.log(strike2);
                             x.push(strike2);
-                            
+                            xx.push(strike2);
+
                             var prob = json[i].field1;//抓出index
                             //console.log(prob);
                             prob1 = (++prob)*c.value;//轉換成歷史指數,之後變數c要連歷史資料##
@@ -119,11 +122,12 @@
 
                         };
                         console.log(x);
+                        console.log(xx);
                         console.log(y);
-                        myChart.data.label = y;
-                        myChart.data.datasets[0].data = x;
+                        myChart.data.label = y;//x軸
+                        myChart.data.datasets[0].data = x;//y軸
 
-                        myChart.update()
+                        myChart.update()//讓圖表更新
                     };
                 };
 
