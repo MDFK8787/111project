@@ -198,7 +198,8 @@
                             y.push(prob1);
 
                         };
-                        for (i=9;i<x.length;i++){
+                        for (i=9;i<x.length;i++){//線型pmf
+                            linex.length = 0;//讓上一個被輸入的圖表linex資料被清除
                             var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;
                             console.log(xxx);
                             linex.push(xxx);
@@ -206,6 +207,7 @@
 
                         myChart.data.label = y;//x軸
                         myChart.data.datasets[0].data = x;//y軸
+                        myChartline.data.datasets[0].data = linex;//線型y軸
 
                         myChart.update()//讓圖表更新
                         myChartline.update()
