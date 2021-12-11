@@ -40,6 +40,7 @@
             var x = [];
             var y = [];
             var xx = ['0'];//作為被x減去的陣列,要得出columns全部加起來=1
+            var linex = [];//線型pmf的y軸
             //myChart.data.labels = y;
             //myChart.data.datasets[0].data = x;
 
@@ -99,7 +100,7 @@
                 data: {
                     labels: y,
                     datasets: [{
-                        label: 'pmf',
+                        label: 'linePMF',
                         lineTension: 0,
                         data: x,
                         backgroundColor: [
@@ -161,8 +162,8 @@
                 time = time.replace(/:/g,'');
                 time = time+'00';//將時間轉換成csv要用的形式
                 var select = weekArray[day]+'_'+time;//之後用來尋找csv列的名字的變數
-                console.log(time);
-                console.log(select);
+                //console.log(time);
+                //console.log(select);
 
                 
                 //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
@@ -172,7 +173,7 @@
                 request.onload = function () {
                     if (request.status == 200) {
                         var json = JSON.parse(request.responseText);
-                        console.log(json);
+                        //console.log(json);
 
                         x.length = 0;//讓上一個被輸入的圖表y資料被清除
                         y.length = 0;//讓上一個被輸入的圖表x資料被清除
@@ -185,21 +186,24 @@
                             var strike = json[i];//將每一個index的陣列分別抓出來讓select可以選日期時間的columns
                             var strike2 = strike[select];//用日期時間的select選擇陣列
                             
-                            //console.log(strike2);
-                            x.push(strike2);
+                            
+                            x.push(strike2);//將得到的 列 資料放進陣列當中
                             xx.push(strike2);
                             x[i] = x[i] - xx[i];//得出pmf的機率(剩餘時間)
 
                             var prob = json[i].field1;//抓出index
-                            //console.log(prob);
+                            
                             prob1 = (++prob)*c.value;//轉換成歷史指數,之後變數c要連歷史資料##
                             //console.log(prob);
                             y.push(prob1);
 
                         };
-                        console.log(x);
-                        console.log(xx);
-                        console.log(y);
+                        for (i=9;i<x.length;i++){
+                            var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;
+                            console.log(prob);
+
+                        };
+
                         myChart.data.label = y;//x軸
                         myChart.data.datasets[0].data = x;//y軸
 
