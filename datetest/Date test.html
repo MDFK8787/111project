@@ -93,8 +93,8 @@
                     }
                 }
             });
-            var ctx = document.getElementById('myChartline').getContext('2d');
-            var myChart = new Chart(ctx, {
+            var ctx2 = document.getElementById('myChartline').getContext('2d');
+            var myChartline = new Chart(ctx2, {
                 type: 'line',
                 data: {
                     labels: y,
@@ -204,6 +204,7 @@
                         myChart.data.datasets[0].data = x;//y軸
 
                         myChart.update()//讓圖表更新
+                        myChartline.update()
                     };
                 };
 
