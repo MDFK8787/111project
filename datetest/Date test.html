@@ -24,6 +24,7 @@
         <h1>Date test</h1>
         <div class="chartstyle">
             <canvas id="myChart" width="50%" height="50%"></canvas>
+            <canvas id="myChartline" width="50%" height="50%"></canvas>
         </div>
 
         <div class="inputstyle">
@@ -91,7 +92,58 @@
                         }
                     }
                 }
+            });
+            var ctx = document.getElementById('myChartline').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: y,
+                    datasets: [{
+                        label: 'pmf',
+                        lineTension: 0,
+                        data: x,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                        ],
+
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid:{
+                                color:'white'
+                            },
+                            ticks:{
+                                display: true,
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                color:'white',
+                                fontcolor:'white'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid:{
+                                color:'white'
+                            },
+                            ticks:{
+                                display: true,
+                                autoSkip: true,
+                                maxTicksLimit: 10,
+                                color:'white',
+                                fontcolor:'white'
+                            }
+                        }
+                    }
+                }
             });            
+            
 
             function showdate(){
                 var date = document.getElementById('date');
@@ -136,7 +188,7 @@
                             //console.log(strike2);
                             x.push(strike2);
                             xx.push(strike2);
-                            x[i] = x[i] - xx[i];
+                            x[i] = x[i] - xx[i];//得出pmf的機率(剩餘時間)
 
                             var prob = json[i].field1;//抓出index
                             //console.log(prob);
