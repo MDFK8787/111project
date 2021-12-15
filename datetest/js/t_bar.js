@@ -40,7 +40,8 @@ function strikedata(){
             //console.log(call_open);
             //console.log(call_close);
             var button_len = call_strike.length;
-            var tdata_len = document.getElementById('t_data').row.length;
+            var tdata_len = document.getElementById('t_data').rows.length;
+            var tdata = document.getElementById('t_data');
             if (tdata_len !== button_len) {//讓按鈕可以印到所有選到的資料呈現出來為止
                 
                 for (var i = 0; i < tdata_len; i++) { //把之前的資料清掉							
@@ -48,7 +49,7 @@ function strikedata(){
                 };
                 //建立表格
                 for (var i = 0; i < button_len; i++) {
-                    var newRow = t_data.insertRow(i),
+                    var newRow = tdata.insertRow(i),
                         cell0 = newRow.insertCell(0),
                         cell1 = newRow.insertCell(1),
                         cell2 = newRow.insertCell(2),
