@@ -45,7 +45,7 @@ function strikedata(){
                 
                 for (var i = 0; i < tdata_len; i++) { //把之前的資料清掉							
                     document.getElementById("t_data").deleteRow(0);
-                }
+                };
                 //建立表格
                 for (var i = 0; i < button_len; i++) {
                     var newRow = t_data.insertRow(i),
@@ -56,11 +56,11 @@ function strikedata(){
                         cell4 = newRow.insertCell(4);
 
                     
-                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "'>" + '-' + "</button>";//印出按鈕
-                    cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + "'>" + '-' + "</button>";
+                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "'>" + 'Ask' + "</button>";//印出按鈕
+                    cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + "'>" + 'Bid' + "</button>";
                     cell2.innerHTML = cell2.innerHTML + "<font id='strike_"+ i.toString() +"_data'>" + 'strike' + "</font>";
-                    cell3.innerHTML = cell3.innerHTML + "<button id='button_put_open_price_" + i.toString() + "'>" + '-' + "</button>";
-                    cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + "'>" + '-' + "</button>";
+                    cell3.innerHTML = cell3.innerHTML + "<button id='button_put_open_price_" + i.toString() + "'>" + 'Bid' + "</button>";
+                    cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + "'>" + 'Ask' + "</button>";
                 };
             } else {//當新選的資料要印出的按鈕數跟舊資料一樣長時,直接換數值就好
                 for (var i = 0; i < button_len; i++) {
