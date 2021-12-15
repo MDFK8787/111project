@@ -40,7 +40,7 @@ function strikedata(){
             //console.log(call_open);
             //console.log(call_close);
             var button_len = call_strike.length;
-            var tdata_len = document.getElementById('t_data');
+            var tdata_len = document.getElementById('t_data').row.length;
             if (tdata_len !== button_len) {//讓按鈕可以印到所有選到的資料呈現出來為止
                 
                 for (var i = 0; i < tdata_len; i++) { //把之前的資料清掉							
