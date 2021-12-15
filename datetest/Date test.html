@@ -35,7 +35,8 @@
 
         <div class="tbar">
             <form action="">
-                <select id="timeselect" name="time" onselect="strikedata()">
+                <select id="timeselect" name="time" onchange="strikedata()">
+                    <option value="" disabled selected></option> 
                     <option id='time0900' value="09:00:00">09:00</option>
                     <option id='time0930' value="09:30:00">09:30</option>
                     <option id='time1000' value="10:00:00">10:00</option>
