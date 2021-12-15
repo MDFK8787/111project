@@ -10,7 +10,7 @@ function strikedata(){
             var json = JSON.parse(request.responseText);
             console.log(json)
             var date = document.getElementById('date');
-            console.log(date);
+            console.log(date.value);
             var len_json = Object.keys(json).length; //宣告json長度
         }
     }
