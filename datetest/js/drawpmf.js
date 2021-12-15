@@ -4,7 +4,7 @@ var xx = ['0'];//作為被x減去的陣列,要得出columns全部加起來=1
 var linex = [];//線型pmf的y軸
 //myChart.data.labels = y;
 //myChart.data.datasets[0].data = x;
-
+/*
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
@@ -54,7 +54,7 @@ var myChart = new Chart(ctx, {
             }
         }
     }
-});
+});*/
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//線型pmf
 var myChartline = new Chart(ctx2, {
