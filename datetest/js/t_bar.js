@@ -1,14 +1,14 @@
+call_strike = [];
+call_open = [];
+call_close = [];
+put_strike = [];
+put_open = [];
+put_close = [];
+var time1 = document.getElementById('timeselect').value;
+
+
 function strikedata(){
-    var time1 = document.getElementById('timeselect').value;
-    console.log(time1)
-
-    call_strike = [];
-    call_open = [];
-    call_close = [];
-    put_strike = [];
-    put_open = [];
-    put_close = [];
-
+    
     var request = new XMLHttpRequest();
     request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/call.json");
     request.send(null);
@@ -96,7 +96,7 @@ function put_t_data(){
             var json = JSON.parse(request.responseText);
             var date = document.getElementById('date');
             var len_json = Object.keys(json).length;
-            var time1 = document.getElementById('timeselect').value;
+            //var time1 = document.getElementById('timeselect').value;
 
 
             put_strike.length = 0;//清除舊資料
