@@ -12,6 +12,14 @@ function strikedata(){
             var date = document.getElementById('date');
             console.log(date.value);
             var len_json = Object.keys(json).length; //宣告json長度
+
+            for(i=0;i<len_json;i++){
+
+                var a = json[i];
+                console.log(a)
+                //var b = a[]
+
+            }
         }
     }
           
