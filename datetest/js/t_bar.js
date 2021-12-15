@@ -17,6 +17,10 @@ function strikedata(){
             console.log(date.value);
             var len_json = Object.keys(json).length; //宣告json長度
 
+            call_strike.length = 0;
+            call_open.length = 0;
+            call_close.length = 0;
+
             for(i=0;i<len_json;i++){
 
                 var a = json[i];
