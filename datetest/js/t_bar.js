@@ -1,14 +1,18 @@
-call_strike = [];
-call_open = [];
-call_close = [];
-put_strike = [];
-put_open = [];
-put_close = [];
-var time1 = document.getElementById('timeselect').value;
+
+
 
 
 function strikedata(){
-    
+    time1 = document.getElementById('timeselect').value;
+    console.log(time1)
+
+    call_strike = [];
+    call_open = [];
+    call_close = [];
+    put_strike = [];
+    put_open = [];
+    put_close = [];
+
     var request = new XMLHttpRequest();
     request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/call.json");
     request.send(null);
