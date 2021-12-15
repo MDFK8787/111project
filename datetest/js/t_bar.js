@@ -127,7 +127,18 @@ function put_t_data(){
             console.log(put_close);
 
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
-            var button_len = put_strike.length;
+            var button_len = call_strike.length;
+            var real_len = put_strike.length;
+
+            for(i=0;i<button_len;i++){
+                for(j=0;j<real_len;j++){
+                    if (call_strike[i]==put_strike[j]){
+                        document.getElementById('button_put_open_price_' + i.toString()).innerHTML = put_open[j];
+                        document.getElementById('button_put_close_price_' + i.toString()).innerHTML = put_close[j];
+                    }
+                }
+
+            }
             
         }
     }
