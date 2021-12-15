@@ -96,6 +96,8 @@ function put_t_data(){
             var json = JSON.parse(request.responseText);
             var date = document.getElementById('date');
             var len_json = Object.keys(json).length;
+            var time1 = document.getElementById('timeselect').value;
+
 
             put_strike.length = 0;//清除舊資料
             put_open.length = 0;//清除舊資料
