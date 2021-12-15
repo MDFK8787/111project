@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <div class="tbar">
+        <form action="">
+            <select id="timeselect" name="time" onchange="strikedata()">
+                <option id='time0900' value="090000">09:00</option>
+                <option id='time0930' value="093000">09:30</option>
+                <option id='time1000' value="100000">10:00</option>
+                <option id='time1030' value="103000">10:30</option>
+                <option id='time1100' value="110000">11:00</option>
+                <option id='time1130' value="113000">11:30</option>
+                <option id='time1200' value="120000">12:00</option>
+                <option id='time1230' value="123000">12:30</option>
+                <option id='time1300' value="130000">13:00</option>
+                <option id='time1330' value="133000">13:30</option>
+            </select>
+        </form>
+        <table class="t_top" width="100">
+            <thead>
+                <tr>
+                    <td colspan="2" align="center" valign="center" bgcolor="#B70F1B" width="40">
+                        <font size="5">CALL</font>
+                    </td>
+                    <td colspan="1" align="center" valign="center" bgcolor="#DCDCDC" width="20">
+                        <font size="5">strike</font>
+                    </td>
+                    <td colspan="2" align="center" valign="center" bgcolor="#009879" width="40">
+                        <font size="5">PUT</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="center" bgcolor="#DCDCDC">
+                        <font size="5">Ask</font>
+                    </td>
+                    <td align="center" valign="center" bgcolor="#DCDCDC">
+                        <font size="5">Bid</font>
+                    </td>
+                    <td id='strike' align="center" valign="center" bgcolor="#DCDCDC" width='20px'>
+                        <font size="5" color='black'>strike</font>
+                    </td>
+                    <td align="center" valign="center" bgcolor="#DCDCDC">
+                        <font size="5">Bid</font>
+                    </td>
+                    <td align="center" valign="center" bgcolor="#DCDCDC">
+                        <font size="5">Ask</font>
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="t_data">
+                <!---<tr>
+            <td><button id="bt_call_sell_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_call_sell_price_0)">call_sell_price</button></td>
+            <td><button id="bt_call_buy_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_call_buy_price_0)">call_buy_price</button></td>
+            <td  id="bt_code_0" align="center" valign="center" bgcolor="#006699"><font size="3" color='white' border=1>strike</font></td>
+            <td><button id="bt_put_buy_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_put_buy_price_0)">put_buy_price</button></td>
+            <td><button id="bt_put_sell_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_put_sell_price_0)">put_sell_price</button></td>
+            </tr>class="tm-section"-->
+            </tbody>
+        </table>
+    </div>
+    <script src="t_bar.js"></script>
+</body>
