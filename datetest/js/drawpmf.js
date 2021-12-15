@@ -174,11 +174,11 @@ function showdate(){//確定按下去會執行的地方
                 linex.push(xxx);
             };
 
-            myChart.data.label = y;//x軸
-            myChart.data.datasets[0].data = x;//y軸
+            //myChart.data.label = y;//x軸
+            //myChart.data.datasets[0].data = x;//y軸
             myChartline.data.datasets[0].data = linex;//線型y軸
 
-            myChart.update()//讓圖表更新
+            //myChart.update()//讓圖表更新
             myChartline.update()
         };
     };
