@@ -1,5 +1,5 @@
 function strikedata(){
-    var time = document.getElementById('timeselect').value;
+    var time1 = document.getElementById('timeselect').value;
     console.log(time)
 
     var request = new XMLHttpRequest();
