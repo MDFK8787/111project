@@ -16,9 +16,9 @@ function strikedata(){
             for(i=0;i<len_json;i++){
 
                 var a = json[i];
-                console.log(a)
-                //var b = a[]
-
+                //console.log(a)
+                var b = a[time];
+                console.log(b)
             }
         }
     }
