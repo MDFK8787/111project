@@ -10,7 +10,7 @@ function strikedata(){
     put_close = [];
 
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/tbartest/call.json");
+    request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/call.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
@@ -89,7 +89,7 @@ function strikedata(){
 function put_t_data(){
 
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/tbartest/put.json");
+    request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/put.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
