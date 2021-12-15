@@ -190,7 +190,7 @@ function strikedata(){
     console.log(date)
 
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/tbartest/call.json");
+    request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/call.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
