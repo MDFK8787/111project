@@ -36,7 +36,7 @@ function strikedata(){
                     };
                 };
             };
-            //console.log(call_strike);
+            console.log(call_strike);
             //console.log(call_open);
             //console.log(call_close);
             var button_len = call_strike.length;
