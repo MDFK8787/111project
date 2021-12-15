@@ -64,8 +64,9 @@ function strikedata(){
                     cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + "'>" + 'Ask' + "</button>";
                 };
             } else {//當新選的資料要印出的按鈕數跟舊資料一樣長時,直接換數值就好
-                for (var i = 0; i < button_len; i++) {
+                for (var i = 0; i < tdata_len; i++) {
                     document.getElementById('bt_call_open_price_' + i.toString()).innerHTML = call_open[i].toString();
+                    console.log(call_open[i].toString())
                     document.getElementById('bt_call_close_price_' + i.toString()).innerHTML = call_close[i].toString();
                     document.getElementById('strike_' + i.toString()+'_data').innerHTML = call_strike[i].toString();
                 }
