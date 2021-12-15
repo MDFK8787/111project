@@ -35,7 +35,7 @@
 
         <div class="tbar">
             <form action="">
-                <select id="timeselect" name="time" onchange="strikedata()">
+                <select id="timeselect" name="time" onselect="strikedata()">
                     <option id='time0900' value="09:00:00">09:00</option>
                     <option id='time0930' value="09:30:00">09:30</option>
                     <option id='time1000' value="10:00:00">10:00</option>
@@ -80,13 +80,7 @@
                     </tr>
                 </thead>
                 <tbody id="t_data">
-                    <!---<tr>
-                <td><button id="bt_call_sell_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_call_sell_price_0)">call_sell_price</button></td>
-                <td><button id="bt_call_buy_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_call_buy_price_0)">call_buy_price</button></td>
-                <td  id="bt_code_0" align="center" valign="center" bgcolor="#006699"><font size="3" color='white' border=1>strike</font></td>
-                <td><button id="bt_put_buy_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_put_buy_price_0)">put_buy_price</button></td>
-                <td><button id="bt_put_sell_price_0" name="0" class="btn tm-light-blue-bordered-btn tm-news-link" onclick="addHtmlTableRow(bt_put_sell_price_0)">put_sell_price</button></td>
-                </tr>class="tm-section"-->
+                    
                 </tbody>
             </table>
         </div>
