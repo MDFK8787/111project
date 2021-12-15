@@ -66,15 +66,13 @@ function strikedata(){
 
                 for (var i = 0; i < tdata_len; i++) {
                     document.getElementById('button_call_open_price_' + i.toString()).innerHTML = call_open[i];
-                    console.log(call_open[i].toString())
                     document.getElementById('button_call_close_price_' + i.toString()).innerHTML = call_close[i];
                     document.getElementById('strike_' + i.toString()+'_data').innerHTML = call_strike[i];
                 }
-                
+
             } else {//當新選的資料要印出的按鈕數跟舊資料一樣長時,直接換數值就好
                 for (var i = 0; i < tdata_len; i++) {
                     document.getElementById('button_call_open_price_' + i.toString()).innerHTML = call_open[i];
-                    console.log(call_open[i].toString())
                     document.getElementById('button_call_close_price_' + i.toString()).innerHTML = call_close[i];
                     document.getElementById('strike_' + i.toString()+'_data').innerHTML = call_strike[i];
                 }
