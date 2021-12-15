@@ -3,7 +3,7 @@ function strikedata(){
     console.log(time)
 
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/tbartest/.json");
+    request.open("get", "https://mdfk8787.github.io/111project/tbartest/call.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
