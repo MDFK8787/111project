@@ -35,6 +35,30 @@ function strikedata(){
             console.log(call_strike);
             console.log(call_open);
             console.log(call_close);
+            var button_len = call_strike.length;
+            var tdata_len = document.getElementById('t_data');
+            if (tdata_len !== button_len) {
+                //先清除資料
+                for (var i = 0; i < tdata_len; i++) { //清除所有欄位							
+                    document.getElementById("t_data").deleteRow(0);
+                }
+                //建立表格
+                for (var i = 0; i < button_len; i++) {
+                    var newRow = t_data.insertRow(i),
+                        cell0 = newRow.insertCell(0),
+                        cell1 = newRow.insertCell(1),
+                        cell2 = newRow.insertCell(2),
+                        cell3 = newRow.insertCell(3),
+                        cell4 = newRow.insertCell(4);
+
+                    
+                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + ">" + '-' + "</button>";
+                    cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + ">" + '-' + "</button>";
+                    cell2.innerHTML = cell2.innerHTML + "<font id='strike_"+ i.toString() +"_data'>" + 'strike' + "</font>";
+                    cell3.innerHTML = cell3.innerHTML + "<button id='button_put_open_price_" + i.toString() + ">" + '-' + "</button>";
+                    cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + ">" + '-' + "</button>";
+                };
+            }    
         };
     }
           
