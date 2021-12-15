@@ -37,8 +37,8 @@ function strikedata(){
                 };
             };
             console.log(call_strike);
-            //console.log(call_open);
-            //console.log(call_close);
+            console.log(call_open);
+            console.log(call_close);
             var button_len = call_strike.length;
             var tdata_len = document.getElementById('t_data').rows.length;
             var tdata = document.getElementById('t_data');
