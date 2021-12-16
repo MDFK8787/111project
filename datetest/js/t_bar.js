@@ -2,7 +2,7 @@ function strikedata(){
     time1 = document.getElementById('timeselect').value;
     console.log(time1)
 
-    call_strike = [];
+    call_strike = [];//所選資料暫存陣列
     call_open = [];
     call_close = [];
     put_strike = [];
@@ -45,8 +45,8 @@ function strikedata(){
                 for (var i = 0; i < tdata_len; i++) { //把之前的資料清掉							
                     document.getElementById("t_data").deleteRow(0);
                 };
-                //建立表格
-                for (var i = 0; i < button_len; i++) {
+
+                for (var i = 0; i < button_len; i++) {//t字帳表格建立
                     var newRow = tdata.insertRow(i),
                         cell0 = newRow.insertCell(0),
                         cell1 = newRow.insertCell(1),
@@ -61,7 +61,7 @@ function strikedata(){
                     cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + "'>" + '--' + "</button>";
                 };
 
-                for (var i = 0; i < button_len; i++) {
+                for (var i = 0; i < button_len; i++) {//call按鈕資料
                     document.getElementById('button_call_open_price_' + i.toString()).innerHTML = call_open[i];
                     document.getElementById('button_call_close_price_' + i.toString()).innerHTML = call_close[i];
                     document.getElementById('strike_' + i.toString()+'_data').innerHTML = call_strike[i];
@@ -101,7 +101,7 @@ function put_t_data(){
                 var e = d['date'];
                 var f = d['time'];
 
-                if (e==date.value){
+                if (e==date.value){//抓出選擇日期的資料
                     if (f==time1){
                         put_strike.push(d['strike']);
                         put_open.push(d['open']);
@@ -117,7 +117,7 @@ function put_t_data(){
             var button_len = call_strike.length;
             var real_len = put_strike.length;
 
-            for(i=0;i<button_len;i++){
+            for(i=0;i<button_len;i++){//put按鈕資料
                 for(j=0;j<real_len;j++){
                     if (call_strike[i]==put_strike[j]){
                         document.getElementById('button_put_open_price_' + i.toString()).innerHTML = put_open[j];
