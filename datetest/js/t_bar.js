@@ -1,7 +1,3 @@
-
-
-
-
 function strikedata(){
     time1 = document.getElementById('timeselect').value;
     console.log(time1)
@@ -20,7 +16,6 @@ function strikedata(){
         if (request.status == 200) {
             var json = JSON.parse(request.responseText);
             var date = document.getElementById('date');
-            //console.log(date.value);
             var len_json = Object.keys(json).length; //宣告json長度
 
             call_strike.length = 0;//清除舊資料
@@ -30,10 +25,9 @@ function strikedata(){
             for(i=0;i<len_json;i++){//從一個禮拜當中選出我們要的時間點
 
                 var a = json[i];
-                //console.log(a)
                 var b = a['date'];
                 var c = a['time'];
-                //console.log(b)還是有夜盤幹
+                
                 if (b==date.value){
                     if (c==time1){
                         call_strike.push(a['strike']);
@@ -42,9 +36,6 @@ function strikedata(){
                     };
                 };
             };
-            console.log(call_strike);
-            console.log(call_open);
-            console.log(call_close);
 
             var button_len = call_strike.length;
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
@@ -63,7 +54,6 @@ function strikedata(){
                         cell3 = newRow.insertCell(3),
                         cell4 = newRow.insertCell(4);
 
-                    
                     cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "'>" + '--' + "</button>";//印出按鈕
                     cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + "'>" + '--' + "</button>";
                     cell2.innerHTML = cell2.innerHTML + "<font id='strike_"+ i.toString() +"_data'>" + 'strike' + "</font>";
@@ -100,8 +90,6 @@ function put_t_data(){
             var json = JSON.parse(request.responseText);
             var date = document.getElementById('date');
             var len_json = Object.keys(json).length;
-            //var time1 = document.getElementById('timeselect').value;
-
 
             put_strike.length = 0;//清除舊資料
             put_open.length = 0;//清除舊資料
@@ -110,10 +98,9 @@ function put_t_data(){
             for(i=0;i<len_json;i++){//從一個禮拜當中選出我們要的時間點
 
                 var d = json[i];
-                //console.log(a)
                 var e = d['date'];
                 var f = d['time'];
-                //console.log(b)還是有夜盤幹
+
                 if (e==date.value){
                     if (f==time1){
                         put_strike.push(d['strike']);
@@ -122,9 +109,9 @@ function put_t_data(){
                     };
                 };
             };
-            console.log(put_strike);
-            console.log(put_open);
-            console.log(put_close);
+            //console.log(put_strike);
+            //console.log(put_open);
+            //console.log(put_close);
 
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var button_len = call_strike.length;
