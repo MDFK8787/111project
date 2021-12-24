@@ -188,6 +188,7 @@ function showdate(){//確定按下去會執行的地方
                 var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;
                 if(linex1.length<50){
                     linex1.push(xxx);
+                    linex2.push('0');
                 }else{
                     linex2.push(xxx);
                 }
