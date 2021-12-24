@@ -101,27 +101,27 @@ var myChartline = new Chart(ctx2, {
             x: {
                 beginAtZero: true,
                 grid:{
-                    color:'white'
+                    color:'black'
                 },
                 ticks:{
                     display: true,
                     autoSkip: true,
                     maxTicksLimit: 10,
-                    color:'white',
-                    fontcolor:'white'
+                    color:'black',
+                    fontcolor:'black'
                 }
             },
             y: {
                 beginAtZero: true,
                 grid:{
-                    color:'white'
+                    color:'black'
                 },
                 ticks:{
                     display: true,
                     autoSkip: true,
                     maxTicksLimit: 10,
-                    color:'white',
-                    fontcolor:'white'
+                    color:'black',
+                    fontcolor:'black'
                 }
             }
         }
