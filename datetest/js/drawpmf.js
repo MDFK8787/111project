@@ -1,7 +1,8 @@
 var x = [];
 var y = [];
 var xx = ['0'];//作為被x減去的陣列,要得出columns全部加起來=1
-var linex = [];//線型pmf的y軸
+var linex1 = [];//線型pmf的y軸
+var linex2 = [];
 //myChart.data.labels = y;
 //myChart.data.datasets[0].data = x;
 /*
@@ -62,10 +63,10 @@ var myChartline = new Chart(ctx2, {
     data: {
         labels: y,
         datasets: [{
-            label: 'linepmf',
+            label: 'linepmf1',
             lineTension: 0,
             fill: true,
-            data: linex,
+            data: linex1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
             ],
@@ -74,7 +75,21 @@ var myChartline = new Chart(ctx2, {
             ],
 
             borderWidth: 1
-        }]
+        },{
+            label: 'linepmf2',
+            lineTension: 0,
+            fill: true,
+            data: linex2,
+            backgroundColor: [
+                'rgba(0, 255, 145, 0.8)',
+            ],
+            borderColor: [
+                'rgba(0, 255, 145, 0.8)',
+            ],
+
+            borderWidth: 1
+        }
+    ]
     },
     options: {
         elements:{
@@ -166,18 +181,22 @@ function showdate(){//確定按下去會執行的地方
                 y.push(prob1);
 
             };
-            linex.length = 0;//讓上一個被輸入的圖表linex資料被清除
+            linex1.length = 0;//讓上一個被輸入的圖表linex資料被清除
+            linex2.length = 0;
             for (i=9;i<x.length;i++){//線型pmf
                             
                 var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;
-                linex.push(xxx);
+                if(linex1.length<50){
+                    linex1.push(xxx);
+                }else{
+                    linex2.push(xxx);
+                }
+                
             };
-            console.log(linex.length);
-
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
-            myChartline.data.datasets[0].data = linex;//線型y軸
-
+            myChartline.data.datasets[0].data = linex1;//線型y軸
+            myChartline.data.datasets[1].data = linex2;
             //myChart.update()//讓圖表更新
             myChartline.update()
         };
