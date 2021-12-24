@@ -10,7 +10,7 @@ function strikedata(){
     put_close = [];
 
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/call.json");
+    request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/202107W4.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
@@ -27,12 +27,15 @@ function strikedata(){
                 var a = json[i];
                 var b = a['date'];
                 var c = a['time'];
+                var type = a['type'];
                 
                 if (b==date.value){
                     if (c==time1){
-                        call_strike.push(a['strike']);
-                        call_open.push(a['open']);
-                        call_close.push(a['close']);
+                        if(type=='C'){
+                            call_strike.push(a['strike']);
+                            call_open.push(a['open']);
+                            call_close.push(a['close']);
+                        };
                     };
                 };
             };
