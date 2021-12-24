@@ -190,6 +190,7 @@ function showdate(){//確定按下去會執行的地方
                     linex1.push(xxx);
                     linex2.push(null);
                 }else{
+                    linex1.push(null);
                     linex2.push(xxx);
                 }
                 
