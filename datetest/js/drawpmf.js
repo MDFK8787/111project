@@ -101,7 +101,7 @@ var myChartline = new Chart(ctx2, {
             x: {
                 beginAtZero: true,
                 grid:{
-                    color:'black'
+                    color:'white'
                 },
                 ticks:{
                     display: true,
@@ -114,7 +114,7 @@ var myChartline = new Chart(ctx2, {
             y: {
                 beginAtZero: true,
                 grid:{
-                    color:'black'
+                    color:'white'
                 },
                 ticks:{
                     display: true,
