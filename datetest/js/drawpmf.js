@@ -235,7 +235,7 @@ function showdate(){//確定按下去會執行的地方
             //myChart.data.datasets[0].data = x;//y軸
             myChartline.data.datasets[0].data = linex1;//線型y軸
             myChartline.data.datasets[1].data = linex2;
-            myChartline.data.datasets[3].data = linex3;
+            myChartline.data.datasets[2].data = linex3;
             //myChart.update()//讓圖表更新
             myChartline.update()
         };
