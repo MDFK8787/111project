@@ -3,6 +3,7 @@ var y = [];
 var xx = ['0'];//作為被x減去的陣列,要得出columns全部加起來=1
 var linex1 = [];//線型pmf的y軸
 var linex2 = [];
+var linex3 = [];
 //myChart.data.labels = y;
 //myChart.data.datasets[0].data = x;
 /*
@@ -68,7 +69,7 @@ var myChartline = new Chart(ctx2, {
             fill: true,
             data: linex1,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 0, 0, 1)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -76,12 +77,23 @@ var myChartline = new Chart(ctx2, {
 
             tension:0.4
         },{
-            label: 'linepmf2',
             lineTension: 0,
             fill: true,
             data: linex2,
             backgroundColor: [
-                'rgba(0, 255, 145, 0.8)',
+                'rgba(0, 255, 0, 1)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+
+            tension:0.4
+        },{
+            lineTension: 0,
+            fill: true,
+            data: linex3,
+            backgroundColor: [
+                'rgba(0, 0, 255, 1)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -183,22 +195,38 @@ function showdate(){//確定按下去會執行的地方
             };
             linex1.length = 0;//讓上一個被輸入的圖表linex資料被清除
             linex2.length = 0;
+            linex3.length = 0;
             for (i=9;i<x.length;i++){//線型pmf
                             
                 var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
 
-                if(linex1.length<=50){//加入常態分配
-                    linex1.push(xxx);
-                }else{
+                if(linex1.length<18){//加入常態分配
                     linex1.push(null);
+                }else if(linex1.length>95){
+                    linex1.push(null);
+                }else{
+                    linex1.push(xxx);
                 };
 
-                if(linex1.length<50){//加入常態分配
-                    linex2.push(null);
+                if(linex1.length>2){//加入常態分配
+                    if(linex1.length<18){
+                        linex2.push(xxx);
+                    };
+                }else if(linex1.length>95){
+                    if(linex1.length<112){
+                        linex2.push(xxx);
+                    };
                 }else{
-                    linex2.push(xxx);
+                    linex2.push(null);
                 }
-                
+
+                if(linex1.length<=2){//加入常態分配
+                    linex3.push(xxx);
+                }else if(linex1.length>112){
+                    linex3.push(xxx);
+                }else{
+                    linex3.push(null);
+                }
             };
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
