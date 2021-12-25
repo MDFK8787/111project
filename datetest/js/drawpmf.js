@@ -211,7 +211,7 @@ function showdate(){//確定按下去會執行的地方
                 };
 
                 if(linex1.length>1){//加入常態分配
-                    if(linex1.length<20){
+                    if(linex1.length<21){
                         linex2.push(xxx);
                     };
                 }else if(linex1.length>102){
