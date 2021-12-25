@@ -74,7 +74,7 @@ var myChartline = new Chart(ctx2, {
                 'rgba(255, 99, 132, 1)',
             ],
 
-            borderWidth: 1
+            tension:0.4
         },{
             label: 'linepmf2',
             lineTension: 0,
@@ -87,7 +87,7 @@ var myChartline = new Chart(ctx2, {
                 'rgba(0, 255, 145, 0.8)',
             ],
 
-            borderWidth: 1
+            tension:0.4
         }
     ]
     },
@@ -185,8 +185,9 @@ function showdate(){//確定按下去會執行的地方
             linex2.length = 0;
             for (i=9;i<x.length;i++){//線型pmf
                             
-                var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;
-                if(linex1.length<=50){
+                var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
+
+                if(linex1.length<=50){//加入常態分配
                     linex1.push(xxx);
                     linex2.push(null);
                 }else{
