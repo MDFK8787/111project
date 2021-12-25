@@ -215,9 +215,9 @@ function showdate(){//確定按下去會執行的地方
                         linex2.push(xxx);
                     };
                 }else if(linex1.length>95){
-                    if(linex1.length<112){
+                        if(linex1.length<112){
                         linex2.push(xxx);
-                    };
+                        };
                 }else{
                     linex2.push(null);
                 };
