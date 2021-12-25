@@ -77,6 +77,7 @@ var myChartline = new Chart(ctx2, {
 
             tension:0.4
         },{
+            label: 'linepmf2',
             lineTension: 0,
             fill: true,
             data: linex2,
@@ -89,6 +90,7 @@ var myChartline = new Chart(ctx2, {
 
             tension:0.4
         },{
+            label: 'linepmf3',
             lineTension: 0,
             fill: true,
             data: linex3,
