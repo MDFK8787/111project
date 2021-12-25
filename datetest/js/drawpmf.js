@@ -202,29 +202,29 @@ function showdate(){//確定按下去會執行的地方
                             
                 var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
 
-                if(linex1.length<20){//加入常態分配
+                if(linex1.length<18){//加入常態分配
                     linex1.push(null);
-                }else if(linex1.length>102){
+                }else if(linex1.length>95){
                     linex1.push(null);
                 }else{
                     linex1.push(xxx);
                 };
 
                 if(linex1.length>1){//加入常態分配
-                    if(linex1.length<22){
+                    if(linex1.length<20){
                         linex2.push(xxx);
                     };
-                }else if(linex1.length>102){
-                    if(linex1.length<121){
+                }else if(linex1.length>95){
+                    if(linex1.length<112){
                         linex2.push(xxx);
                     };
                 }else{
                     linex2.push(null);
-                }
+                };
 
                 if(linex1.length<=2){//加入常態分配
                     linex3.push(xxx);
-                }else if(linex1.length>121){
+                }else if(linex1.length>111){
                     linex3.push(xxx);
                 }else{
                     linex3.push(null);
