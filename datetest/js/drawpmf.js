@@ -4,6 +4,7 @@ var xx = ['0'];//作為被x減去的陣列,要得出columns全部加起來=1
 var linex1 = [];//線型pmf的y軸
 var linex2 = [];
 var linex3 = [];
+var linex4 = [];
 //myChart.data.labels = y;
 //myChart.data.datasets[0].data = x;
 /*
@@ -96,6 +97,19 @@ var myChartline = new Chart(ctx2, {
             data: linex3,
             backgroundColor: [
                 'rgba(0, 0, 255, 1)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+
+            tension:0.4
+        },{
+            label: 'linepmf4',
+            lineTension: 0,
+            fill: true,
+            data: linex4,
+            backgroundColor: [
+                'rgba(0, 255, 0, 1)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -214,10 +228,6 @@ function showdate(){//確定按下去會執行的地方
                     if(linex1.length<20){
                         linex2.push(xxx);
                     };
-                }else if(linex1.length>95){
-                        if(linex1.length<112){
-                        linex2.push(xxx);
-                        };
                 }else{
                     linex2.push(null);
                 };
@@ -229,16 +239,26 @@ function showdate(){//確定按下去會執行的地方
                 }else{
                     linex3.push(null);
                 }
+
+                if(linex1.length>95){
+                    if(linex1.length<112){
+                        linex4.push(xxx);
+                        };
+                }else{
+                    linex4.push(null);
+                }
             };
             console.log(x.length);
             console.log(linex1.length);
             console.log(linex2.length);
             console.log(linex3.length);
+            console.log(linex4.length);
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
-            myChartline.data.datasets[0].data = linex1;//線型y軸
-            myChartline.data.datasets[1].data = linex2;
-            myChartline.data.datasets[2].data = linex3;
+            myChartline.data.datasets[0].data = linex1;//線型y軸紅色區域
+            myChartline.data.datasets[1].data = linex2;//g綠區
+            myChartline.data.datasets[2].data = linex3;//b藍區
+            myChartline.data.datasets[3].data = linex4;//g
             //myChart.update()//讓圖表更新
             myChartline.update()
         };
