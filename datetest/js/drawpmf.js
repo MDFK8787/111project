@@ -81,10 +81,10 @@ var myChartline = new Chart(ctx2, {
             fill: true,
             data: linex2,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
+                'rgba(0, 255, 145, 0.8)',
             ],
             borderColor: [
-                'rgba(0, 255, 145, 0.8)',
+                'rgba(255, 99, 132, 0.2)',
             ],
 
             tension:0.4
@@ -193,7 +193,7 @@ function showdate(){//確定按下去會執行的地方
                     linex1.push(null);
                 };
 
-                if(linex1.length<=49){//加入常態分配
+                if(linex1.length<50){//加入常態分配
                     linex2.push(null);
                 }else{
                     linex2.push(xxx);
