@@ -81,7 +81,7 @@ var myChartline = new Chart(ctx2, {
             fill: true,
             data: linex2,
             backgroundColor: [
-                'rgba(0, 255, 145, 0.8)',
+                'rgba(255, 99, 132, 0.2)',
             ],
             borderColor: [
                 'rgba(0, 255, 145, 0.8)',
