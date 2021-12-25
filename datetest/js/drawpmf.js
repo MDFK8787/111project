@@ -234,14 +234,14 @@ function showdate(){//確定按下去會執行的地方
 
                 if(linex1.length<=2){//加入常態分配b
                     linex3.push(xxx);
-                }else if(linex1.length>110){
+                }else if(linex1.length>111){
                     linex3.push(xxx);
                 }else{
                     linex3.push(null);
                 }
 
                 if(linex1.length>95){//g
-                    if(linex1.length<112){
+                    if(linex1.length<113){
                         linex4.push(xxx);
                         };
                 }else{
