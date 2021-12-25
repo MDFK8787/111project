@@ -230,7 +230,10 @@ function showdate(){//確定按下去會執行的地方
                     linex3.push(null);
                 }
             };
-            console.log(x.length)
+            console.log(x.length);
+            console.log(linex1.length);
+            console.log(linex2.length);
+            console.log(linex3.length);
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
             myChartline.data.datasets[0].data = linex1;//線型y軸
