@@ -189,9 +189,13 @@ function showdate(){//確定按下去會執行的地方
 
                 if(linex1.length<=50){//加入常態分配
                     linex1.push(xxx);
-                    linex2.push(null);
                 }else{
                     linex1.push(null);
+                };
+
+                if(linex1.length<=49){//加入常態分配
+                    linex2.push(null);
+                }else{
                     linex2.push(xxx);
                 }
                 
