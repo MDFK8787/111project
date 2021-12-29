@@ -12,7 +12,7 @@ var plugin = {
           var activePoint = chart.tooltip._active[0],
              ctx = chart.ctx2,
              y_axis = chart.scales['y-axis-0'],
-             x = activePoint.tooltipPosition().x,
+             x = activePoint.tooltip.xAlign,
              topY = y_axis.top,
              bottomY = y_axis.bottom;
           // draw line
