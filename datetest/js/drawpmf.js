@@ -5,59 +5,28 @@ var linex1 = [];//線型pmf的y軸
 var linex2 = [];
 var linex3 = [];
 var linex4 = [];
-//myChart.data.labels = y;
-//myChart.data.datasets[0].data = x;
-/*
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: y,
-        datasets: [{
-            label: 'pmf',
-            lineTension: 0,
-            data: x,
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-            ],
 
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            x: {
-                beginAtZero: true,
-                grid:{
-                    color:'white'
-                },
-                ticks:{
-                    display: true,
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    color:'white',
-                    fontcolor:'white'
-                }
-            },
-            y: {
-                beginAtZero: true,
-                grid:{
-                    color:'white'
-                },
-                ticks:{
-                    display: true,
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    color:'white',
-                    fontcolor:'white'
-                }
-            }
-        }
+Chart.plugins.register({
+    afterDatasetsDraw: function(chart) {
+       if (chart.tooltip._active && chart.tooltip._active.length) {
+          var activePoint = chart.tooltip._active[0],
+             ctx = chart.ctx2,
+             y_axis = chart.scales['y-axis-0'],
+             x = activePoint.tooltipPosition().x,
+             topY = y_axis.top,
+             bottomY = y_axis.bottom;
+          // draw line
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(x, topY);
+          ctx.lineTo(x, bottomY);
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#07C';
+          ctx.stroke();
+          ctx.restore();
+       }
     }
-});*/
+});
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//線型pmf
 var myChartline = new Chart(ctx2, {
@@ -81,11 +50,7 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        Plugins:{
-            legend:{
-                display:false
-            }
-        },
+        
         elements:{
             point:{
                 radius:0
@@ -119,7 +84,10 @@ var myChartline = new Chart(ctx2, {
                 }
             }
         }
-    }
+    },
+    Plugins:[
+
+    ]
 });            
             
 
@@ -196,3 +164,56 @@ function showdate(){//確定按下去會執行的地方
     };
 
 }
+//myChart.data.labels = y;
+//myChart.data.datasets[0].data = x;
+/*
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: y,
+        datasets: [{
+            label: 'pmf',
+            lineTension: 0,
+            data: x,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                beginAtZero: true,
+                grid:{
+                    color:'white'
+                },
+                ticks:{
+                    display: true,
+                    autoSkip: true,
+                    maxTicksLimit: 10,
+                    color:'white',
+                    fontcolor:'white'
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid:{
+                    color:'white'
+                },
+                ticks:{
+                    display: true,
+                    autoSkip: true,
+                    maxTicksLimit: 10,
+                    color:'white',
+                    fontcolor:'white'
+                }
+            }
+        }
+    }
+});*/
