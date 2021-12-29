@@ -73,7 +73,7 @@ var myChartline = new Chart(ctx2, {
                 'rgba(255, 0, 0, 1)',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
+                'rgba(255, 104, 171, 0.47)',
             ],
 
             tension:0.4
