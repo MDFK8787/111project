@@ -85,7 +85,7 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
-    Plugins:[{
+    Plugins:{
         tooltipline:{
             afterDatasetsDraw: Chart=>{
                 if(Chart.tooltip.active && Chart.tooltip._active.length){
@@ -97,7 +97,7 @@ var myChartline = new Chart(ctx2, {
                 
             }
         }
-    }]
+    }
 });            
 //console.log(Chart)            
 
