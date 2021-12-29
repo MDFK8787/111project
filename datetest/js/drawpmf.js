@@ -13,13 +13,13 @@ var plugin = {
             var activePoint = chart.tooltip._active[0],
                 ctx = chart.ctx2,
                 y_axis = chart.scales['y-axis-0'],
-                x = activePoint.elements.x,
+                //x = activePoint.elements.x,
                 topY = y_axis.top,
                 bottomY = y_axis.bottom;
           // draw line
             ctx.save();
             ctx.beginPath();
-            ctx.moveTo(x, topY);
+            ctx.moveTo(activePoint.elements.x, topY);
             ctx.lineTo(x, bottomY);
             ctx.lineWidth = 2;
             ctx.strokeStyle = '#07C';
