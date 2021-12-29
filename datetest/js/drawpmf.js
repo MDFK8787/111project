@@ -6,7 +6,7 @@ var linex2 = [];
 var linex3 = [];
 var linex4 = [];
 
-/*Chart.plugins.register({
+var line = {
     afterDatasetsDraw: function(chart) {
        if (chart.tooltip._active && chart.tooltip._active.length) {
           var activePoint = chart.tooltip._active[0],
@@ -26,7 +26,7 @@ var linex4 = [];
           ctx.restore();
         }
     }
-});*/
+};
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//線型pmf
 var myChartline = new Chart(ctx2, {
@@ -50,19 +50,7 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        Plugins:{
-            tooltipline:{
-                afterDatasetsDraw: Chart=>{
-                    if(Chart.tooltip.active && Chart.tooltip._active.length){
-                        var ctx = Chart.ctx2;
-                        ctx.save();
-                        var activePoint = Chart.tooltip._active[0];
-                        console.log(activePoint)
-                    }
-                    
-                }
-            }
-        },
+        
         elements:{
             point:{
                 radius:0
@@ -97,7 +85,7 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
-    
+    Plugins:[line]
 });            
 //console.log(Chart)            
 
