@@ -6,7 +6,7 @@ var linex2 = [];
 var linex3 = [];
 var linex4 = [];
 
-var line = {
+var plugin = {
     afterDatasetsDraw: function(chart) {
        if (chart.tooltip._active && chart.tooltip._active.length) {
           var activePoint = chart.tooltip._active[0],
@@ -85,7 +85,7 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
-    Plugins:[line]
+    plugins:[plugin]
 });            
 //console.log(Chart)            
 
