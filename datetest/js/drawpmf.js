@@ -50,7 +50,19 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        
+        Plugins:{
+            tooltipline:{
+                afterDatasetsDraw: Chart=>{
+                    if(Chart.tooltip.active && Chart.tooltip._active.length){
+                        var ctx = Chart.ctx2;
+                        ctx.save();
+                        var activePoint = Chart.tooltip._active[0];
+                        console.log(activePoint)
+                    }
+                    
+                }
+            }
+        },
         elements:{
             point:{
                 radius:0
@@ -85,19 +97,7 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
-    Plugins:{
-        tooltipline:{
-            afterDatasetsDraw: Chart=>{
-                if(Chart.tooltip.active && Chart.tooltip._active.length){
-                    var ctx = Chart.ctx2;
-                    ctx.save();
-                    var activePoint = Chart.tooltip._active[0];
-                    console.log(activePoint)
-                }
-                
-            }
-        }
-    }
+    
 });            
 //console.log(Chart)            
 
