@@ -125,7 +125,7 @@ function showdate(){//確定按下去會執行的地方
 
             var len_json = Object.keys(json).length; //宣告json長度
             for (i=0;i<len_json;i++){
-                console.log(json[i]);
+                //console.log(json[i]);
 
                 var strike = json[i];//將每一個index的陣列分別抓出來讓select可以選日期時間的columns
                 var strike2 = strike[select];//用日期時間的select選擇陣列
@@ -151,7 +151,7 @@ function showdate(){//確定按下去會執行的地方
                 linex1.push(xxx);
                 
             };
-            console.log(x.length);
+            //console.log(x.length);
             console.log(linex1.length);
 
             //myChart.data.label = y;//x軸
