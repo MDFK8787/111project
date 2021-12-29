@@ -9,11 +9,10 @@ var linex4 = [];
 var plugin = {
     afterDatasetsDraw: function(chart) {
        if(chart.tooltip._active && chart.tooltip._active.length) {
-            console.log(chart.chartArea)
-            
             var activePoint = chart.tooltip._active[0];
             var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
+            console.log(chart.chartArea.top)
             console.log(activePoint)
             var x = activePoint.element.x;
             //topY = y_axis.top,
@@ -22,10 +21,11 @@ var plugin = {
             
             ctx.save();
             ctx.beginPath();
+            ctx.setLineDash([5,7]);
             ctx.moveTo(activePoint.element.x, 0);
             ctx.lineTo(activePoint.element.x, 100);
             ctx.lineWidth = 2;
-            ctx.strokeStyle = '#07C';
+            ctx.strokeStyle = 'green';
             ctx.stroke();
             ctx.restore();
         }
