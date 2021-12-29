@@ -12,7 +12,7 @@ var plugin = {
             console.log(chart.chartArea)
             
             var activePoint = chart.tooltip._active[0];
-            var ctx = chart.ctx2;
+            var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
             console.log(activePoint)
             var x = activePoint.element.x;
