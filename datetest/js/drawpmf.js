@@ -138,8 +138,7 @@ function showdate(){//確定按下去會執行的地方
 
             };
             linex1.length = 0;//讓上一個被輸入的圖表linex資料被清除
-            linex2.length = 0;
-            linex3.length = 0;
+
             for (i=9;i<x.length;i++){//線型pmf
                             
                 var xxx = (x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
