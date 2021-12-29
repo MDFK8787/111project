@@ -94,7 +94,7 @@ var myChartline = new Chart(ctx2, {
         }
     }]
 });            
-            
+console.log(Chart)            
 
 function showdate(){//確定按下去會執行的地方
     var date = document.getElementById('date');
