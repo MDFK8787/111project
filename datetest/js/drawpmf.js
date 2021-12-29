@@ -88,13 +88,18 @@ var myChartline = new Chart(ctx2, {
     Plugins:[{
         tooltipline:{
             beforeDraw: Chart=>{
-                var ctx = Chart.ctx2;
-                console.log(Chart)
+                if(Chart.tooltip.active && Chart.tooltip._active.length){
+                    var ctx = Chart.ctx2;
+                    ctx.save();
+                    var activePoint = Chart.tooltip._active[0];
+                    console.log(activePoint)
+                }
+                
             }
         }
     }]
 });            
-console.log(Chart)            
+//console.log(Chart)            
 
 function showdate(){//確定按下去會執行的地方
     var date = document.getElementById('date');
