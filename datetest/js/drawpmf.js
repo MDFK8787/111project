@@ -8,15 +8,17 @@ var linex4 = [];
 
 var plugin = {
     afterDatasetsDraw: function(chart) {
-       if (chart.tooltip._active && chart.tooltip._active.length) {
+       if(chart.tooltip._active && chart.tooltip._active.length) {
             console.log(chart.chartArea)
+            
             var activePoint = chart.tooltip._active[0],
                 ctx = chart.ctx2,
-                y_axis = chart.scales['y-axis-0'],
+                y_axis = chart.scales['y-axis-0'];
                 //x = activePoint.elements.x,
-                topY = y_axis.top,
-                bottomY = y_axis.bottom;
+                //topY = y_axis.top,
+                //bottomY = y_axis.bottom;
           // draw line
+            console.log(activePoint)
             ctx.save();
             ctx.beginPath();
             ctx.moveTo(activePoint.elements.x, topY);
