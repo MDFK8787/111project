@@ -81,6 +81,11 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
+        Plugins:{
+            legend:{
+                display:false
+            }
+        },
         elements:{
             point:{
                 radius:0
