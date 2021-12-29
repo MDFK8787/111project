@@ -65,7 +65,7 @@ var myChartline = new Chart(ctx2, {
     data: {
         labels: y,
         datasets: [{
-            label: 'linepmf1',
+            label: false,
             lineTension: 0,
             fill: true,
             data: linex1,
@@ -81,11 +81,7 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        Plugins:{
-            legend:{
-                display:false
-            }
-        },
+        
         elements:{
             point:{
                 radius:0
