@@ -2,28 +2,20 @@ var x = [];
 var y = [];
 var xx = ['0'];//作為被x減去的陣列,要得出columns全部加起來=1
 var linex1 = [];//線型pmf的y軸
-var linex2 = [];
-var linex3 = [];
-var linex4 = [];
 
-var plugin = {
+var plugin = {//資料點上的線
     afterDatasetsDraw: function(chart) {
        if(chart.tooltip._active && chart.tooltip._active.length) {
             var activePoint = chart.tooltip._active[0];
             var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
-            console.log(chart.chartArea.bottom)
-            console.log(activePoint)
-            var x = activePoint.element.x;
-            //topY = y_axis.top,
-            //bottomY = y_axis.bottom;
-            // draw line
-            
+            //console.log(chart.chartArea.bottom)
+
             ctx.save();
             ctx.beginPath();
-            ctx.setLineDash([5,7]);
-            ctx.moveTo(activePoint.element.x, 32);
-            ctx.lineTo(activePoint.element.x, 586.1671534784361);
+            ctx.setLineDash([5,7]);//虛線
+            ctx.moveTo(activePoint.element.x, 32);//讓程式知道要在網頁的哪個座標x顯示線,32是線的最高點
+            ctx.lineTo(activePoint.element.x, 586.1671534784361);//線的最低點
             ctx.lineWidth = 2;
             ctx.strokeStyle = 'green';
             ctx.stroke();
@@ -89,7 +81,7 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
-    plugins:[plugin]
+    plugins:[plugin]//線的插入點
 });            
 //console.log(Chart)            
 
