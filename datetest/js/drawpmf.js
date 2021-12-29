@@ -11,14 +11,15 @@ var plugin = {
        if(chart.tooltip._active && chart.tooltip._active.length) {
             console.log(chart.chartArea)
             
-            var activePoint = chart.tooltip._active[0],
-                ctx = chart.ctx2,
-                y_axis = chart.scales['y-axis-0'];
-                x = activePoint.elements.x,
+            var activePoint = chart.tooltip._active[0];
+            var ctx = chart.ctx2;
+            var y_axis = chart.scales['y-axis-0'];
+            console.log(activePoint)
+            var x = activePoint.elements.x,
                 //topY = y_axis.top,
                 //bottomY = y_axis.bottom;
           // draw line
-            console.log(activePoint)
+            
             ctx.save();
             ctx.beginPath();
             ctx.moveTo(activePoint.elements.x, topY);
