@@ -22,7 +22,7 @@ var plugin = {
             
             ctx.save();
             ctx.beginPath();
-            ctx.moveTo(activePoint.elements.x, topY);
+            ctx.moveTo(activePoint.element.x, 0);
             ctx.lineTo(x, bottomY);
             ctx.lineWidth = 2;
             ctx.strokeStyle = '#07C';
