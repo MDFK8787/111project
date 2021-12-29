@@ -15,10 +15,10 @@ var plugin = {
             var ctx = chart.ctx2;
             var y_axis = chart.scales['y-axis-0'];
             console.log(activePoint)
-            var x = activePoint.elements.x,
-                //topY = y_axis.top,
-                //bottomY = y_axis.bottom;
-          // draw line
+            var x = activePoint.elements.x;
+            //topY = y_axis.top,
+            //bottomY = y_axis.bottom;
+            // draw line
             
             ctx.save();
             ctx.beginPath();
