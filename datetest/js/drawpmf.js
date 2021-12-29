@@ -23,7 +23,7 @@ var plugin = {
             ctx.beginPath();
             ctx.setLineDash([5,7]);
             ctx.moveTo(activePoint.element.x, 32);
-            ctx.lineTo(activePoint.element.x, activePoint.element.y);
+            ctx.lineTo(activePoint.element.x, 586.1671534784361);
             ctx.lineWidth = 2;
             ctx.strokeStyle = 'green';
             ctx.stroke();
