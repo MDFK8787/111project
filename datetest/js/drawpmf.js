@@ -6,7 +6,7 @@ var linex2 = [];
 var linex3 = [];
 var linex4 = [];
 
-Chart.plugins.register({
+/*Chart.plugins.register({
     afterDatasetsDraw: function(chart) {
        if (chart.tooltip._active && chart.tooltip._active.length) {
           var activePoint = chart.tooltip._active[0],
@@ -24,9 +24,9 @@ Chart.plugins.register({
           ctx.strokeStyle = '#07C';
           ctx.stroke();
           ctx.restore();
-       }
+        }
     }
-});
+});*/
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//線型pmf
 var myChartline = new Chart(ctx2, {
@@ -85,9 +85,14 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
-    Plugins:[
-
-    ]
+    Plugins:[{
+        tooltipline:{
+            beforeDraw: Chart=>{
+                var ctx = Chart.ctx2;
+                console.log(Chart)
+            }
+        }
+    }]
 });            
             
 
