@@ -1,4 +1,4 @@
-function showdate(){
+function strikedata(){
     time1 = document.getElementById('timeselect').value;
     console.log(time1)
 
