@@ -86,6 +86,9 @@ function strikedata(){
 
 function put_t_data(){
 
+    var time1 = document.getElementById('time');
+    time1 = time1.value+":00";
+
     var request = new XMLHttpRequest();
     request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/put.json");
     request.send(null);
