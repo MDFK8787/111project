@@ -85,7 +85,7 @@ function strikedata(){
     put_t_data()
               
 }
-var callstrike = call_strike;
+
 function put_t_data(){
 
     var time1 = document.getElementById('time');
@@ -126,7 +126,6 @@ function put_t_data(){
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var button_len = call_strike.length;
             var real_len = put_strike.length;
-            var call_strike = call_strike;
 
             for(i=0;i<button_len;i++){//put按鈕資料
                 for(j=0;j<real_len;j++){
