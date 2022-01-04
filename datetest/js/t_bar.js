@@ -1,5 +1,6 @@
 function strikedata(){
-    time1 = document.getElementById('timeselect').value;
+    var time1 = document.getElementById('time');
+    time1 = time1.value+":00";
     console.log(time1)
 
     call_strike = [];//所選資料暫存陣列
