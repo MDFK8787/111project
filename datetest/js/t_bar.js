@@ -1,4 +1,4 @@
-call_strike = [];//所選資料暫存陣
+var call_strike = [];//所選資料暫存陣
 var call_open = [];
 var call_close = [];
 var put_strike = [];
@@ -26,13 +26,13 @@ function strikedata(){
             for(i=0;i<len_json;i++){//從一個禮拜當中選出我們要的時間點
 
                 var a = json[i];
-                var b = a['date'];
-                var c = a['time'];
-                var type = a['type'];
+                var b = a['date'];//指定的日期
+                var c = a['time'];//指定的時間
+                var type = a['type'];//put or call
                 
-                if (b==date.value){
-                    if (c==time1){
-                        if(type=='C'){
+                if (b==date.value){//抓json中日期一樣的資料
+                    if (c==time1){//抓json中時間一樣的資料
+                        if(type=='C'){//抓json中call的資料
                             call_strike.push(a['strike']);
                             call_open.push(a['open']);
                             call_close.push(a['close']);
@@ -85,7 +85,7 @@ function strikedata(){
     put_t_data()
               
 }
-
+var callstrike = call_strike;
 function put_t_data(){
 
     var time1 = document.getElementById('time');
@@ -119,13 +119,14 @@ function put_t_data(){
                 };
             };
             console.log(put_strike);
-            console.log(call_strike);
+            console.log(callstrike);
             //console.log(put_open);
             //console.log(put_close);
 
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var button_len = call_strike.length;
             var real_len = put_strike.length;
+            var call_strike = call_strike;
 
             for(i=0;i<button_len;i++){//put按鈕資料
                 for(j=0;j<real_len;j++){
