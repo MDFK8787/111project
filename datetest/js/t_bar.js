@@ -41,6 +41,8 @@ function strikedata(){
                 };
             };
 
+            console.log(call_strike);
+            
             var button_len = call_strike.length;
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var tdata = document.getElementById('t_data');
