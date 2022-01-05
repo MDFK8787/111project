@@ -1,14 +1,16 @@
-var call_strike = [];//所選資料暫存陣
-var call_open = [];
-var call_close = [];
-var put_strike = [];
-var put_open = [];
-var put_close = [];
+
 
 function strikedata(){
     var time1 = document.getElementById('time');
     time1 = time1.value+":00";
     console.log(time1)
+
+    call_strike = [];//所選資料暫存陣
+    call_open = [];
+    call_close = [];
+    put_strike = [];
+    put_open = [];
+    put_close = [];
 
     var request = new XMLHttpRequest();
     request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/202107W4.json");
