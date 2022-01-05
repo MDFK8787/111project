@@ -70,6 +70,6 @@ function Newrow(array, row) {
     cell2.innerHTML = array[row][2];
     cell3.innerHTML = array[row][3];
     cell4.innerHTML = array[row][4];
-    cell5.innerHTML = cell5.innerHTML + "<input id=amount_" + k.toString() + " maxlength='4' size='5' placeholder='1' onchange='func_calculate(contracts_array)'>";
-    cell6.innerHTML = cell6.innerHTML + "<button id=del_" + k.toString() + " name=" + k.toString() + " class='button button3' onclick='removeSelectedRow(this)' >X</button>";							
+    cell5.innerHTML = cell5.innerHTML + "<input id=amount_" + row.toString() + " maxlength='4' size='5' placeholder='1' onchange='func_calculate(contracts_array)'>";
+    cell6.innerHTML = cell6.innerHTML + "<button id=del_" + row.toString() + " name=" + row.toString() + " class='button button3' onclick='removeSelectedRow(this)' >X</button>";							
 }
