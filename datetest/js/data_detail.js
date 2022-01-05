@@ -5,7 +5,7 @@ function show_detail(botton_id){
         var item = k + 1,
             buysell = "short",
             CP = "call",
-            strike = document.getElementById("strike_" + botton_id.name.toString()).textContent,
+            strike = document.getElementById('strike_' + botton_id.name.toString()).innerHTML,
             quote = botton_id.textContent,
             button_id = botton_id.id;
 
