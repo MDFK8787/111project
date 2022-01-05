@@ -61,7 +61,7 @@ function strikedata(){
                         cell3 = newRow.insertCell(3),
                         cell4 = newRow.insertCell(4);
 
-                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "'>" + '--' + "</button>";//印出按鈕
+                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "' onclick='show_detail()'>" + '--' + "</button>";//印出按鈕
                     cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + "'>" + '--' + "</button>";
                     cell2.innerHTML = cell2.innerHTML + "<font id='strike_"+ i.toString() +"_data'>" + 'strike' + "</font>";
                     cell3.innerHTML = cell3.innerHTML + "<button id='button_put_open_price_" + i.toString() + "'>" + '--' + "</button>";
