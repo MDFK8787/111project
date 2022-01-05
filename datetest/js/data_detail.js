@@ -1,3 +1,4 @@
+k = 0;
 function show_detail(botton_id){
     console.log(botton_id.name);
     if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {
