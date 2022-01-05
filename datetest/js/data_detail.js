@@ -50,6 +50,7 @@ function show_detail(botton_id){
     array[row][5] = button_id;
 
     Newrow(array,row)
+    return row++;
 }
 
 function Newrow(array, row) {
