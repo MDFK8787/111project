@@ -71,6 +71,25 @@ function Newrow(array, row) {
     cell2.innerHTML = array[row][2];
     cell3.innerHTML = array[row][3];
     cell4.innerHTML = array[row][4];
-    cell5.innerHTML = cell5.innerHTML + "<input id=amount_" + row.toString() + " maxlength='4' size='5' placeholder='1' onchange='func_calculate(contracts_array)'>";
-    cell6.innerHTML = cell6.innerHTML + "<button id=del_" + row.toString() + " name=" + row.toString() + " class='button button3' onclick='removeSelectedRow(this)' >X</button>";							
+    cell5.innerHTML = cell5.innerHTML + "<input id=amount_" + row.toString() + " placeholder='1'>";
+    cell6.innerHTML = cell6.innerHTML + "<button id=delete_row_" + row.toString() + " name=" + row.toString() + " onclick='removerow(this)' >X</button>";							
+}
+
+function removerow(selected) {
+    var tbody = document.getElementById("row_data");
+    array.splice(selected.name, 1) //將第x個位置刪掉，處理資料庫
+    document.getElementById('row_data').deleteRow(selected.name); //刪除欄位row
+    row = document.getElementById("row_data").rows.length; //讓k照著順序加
+    for (var i = 0; i < tbody.rows.length; i++) { //重新分配id and name
+        var reset_del = document.getElementById('row_data').rows[i].cells[6].firstChild;
+        reset_del.setAttribute('id', 'del_' + i.toString());
+        reset_del.setAttribute('name', i.toString());
+        var reset_amount = document.getElementById('row_data').rows[i].cells[5].firstChild;
+        reset_amount.setAttribute('id', 'amount_' + i.toString());       
+    }
+    for(var i=0;i<row;i++){
+        array[i][0]=i+1;
+        var reset_item = document.getElementById('row_data').rows[i].cells[0];
+        reset_item.innerHTML = i+1;
+    }		
 }
