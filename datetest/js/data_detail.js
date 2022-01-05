@@ -1,4 +1,4 @@
-function show_detail(){
+function show_detail(botton_id){
     var a ="10";
-    console.log(a);
+    console.log(botton_id);
 }
