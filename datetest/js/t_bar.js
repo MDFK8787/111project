@@ -10,7 +10,7 @@ function strikedata(){
     put_strike = [];
     put_open = [];
     put_close = [];
-    
+
     var request = new XMLHttpRequest();
     request.open("get", "https://mdfk8787.github.io/111project/datetest/tbardata/202107W4.json");
     request.send(null);
@@ -83,10 +83,11 @@ function strikedata(){
             }    
         };
     }
+    console.log(call_strike);
     put_t_data()
               
 }
-
+console.log(call_strike);
 function put_t_data(){
 
     var time1 = document.getElementById('time');
