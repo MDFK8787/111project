@@ -118,7 +118,7 @@ function put_t_data(){
                     };
                 };
             };
-            //console.log(put_strike);
+            console.log(put_strike);
             console.log(call_strike);
             //console.log(put_open);
             //console.log(put_close);
