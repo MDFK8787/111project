@@ -77,10 +77,10 @@ function Newrow(array, row) {
 
 function removerow(selected) {
     var tbody = document.getElementById("row_data");
-    array.splice(selected.name, 1) //將第x個位置刪掉，處理資料庫
-    document.getElementById('row_data').deleteRow(selected.name); //刪除欄位row
-    row = document.getElementById("row_data").rows.length; //讓k照著順序加
-    for (var i = 0; i < tbody.rows.length; i++) { //重新分配id and name
+    array.splice(selected.name, 1) //將第x個位置刪掉
+    document.getElementById('row_data').deleteRow(selected.name); //刪除row
+    row = document.getElementById("row_data").rows.length; //重讀row長度
+    for (var i = 0; i < tbody.rows.length; i++) { //重製刪除按鈕
         var reset_del = document.getElementById('row_data').rows[i].cells[6].firstChild;
         reset_del.setAttribute('id', 'del_' + i.toString());
         reset_del.setAttribute('name', i.toString());
