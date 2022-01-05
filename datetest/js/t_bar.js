@@ -126,7 +126,7 @@ function put_t_data(){
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var button_len = call_strike.length;
             var real_len = put_strike.length;
-
+            console.log(call_strike.length);
             console.log(real_len);
             console.log(button_len);
 
