@@ -1,3 +1,5 @@
+
+
 function strikedata(){
     var time1 = document.getElementById('time');
     time1 = time1.value+":00";
