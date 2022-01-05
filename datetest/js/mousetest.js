@@ -8,10 +8,10 @@ if (a.pageX || a.pageY) {
     posY = a.clientY + document.documentElement.scrollTop + document.body.scrollTop;
 }*/
 window.addEventListener('mousemove',e=>{
-    x = e.clientX;
-    y = e.clientY;
-    xx = document.getElementById('x');
-    yy = document.getElementById('y');
-    xx.textContent = 'x:'+ x;
-    yy.textContent = 'y:'+ y;
+    xposition = e.clientX;
+    yposition = e.clientY;
+    xx = document.getElementById('positionx');
+    yy = document.getElementById('positiony');
+    xx.textContent = 'x:'+ xposition;
+    yy.textContent = 'y:'+ yposition;
 })
