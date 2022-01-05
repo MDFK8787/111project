@@ -41,7 +41,7 @@ function strikedata(){
                 };
             };
 
-            console.log(call_strike);
+            //console.log(call_strike);
 
             var button_len = call_strike.length;
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
@@ -118,14 +118,17 @@ function put_t_data(){
                     };
                 };
             };
-            console.log(put_strike);
-            console.log(call_strike);
+            //console.log(put_strike);
+            //console.log(call_strike);
             //console.log(put_open);
             //console.log(put_close);
 
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var button_len = call_strike.length;
             var real_len = put_strike.length;
+
+            console.log(real_len);
+            console.log(button_len);
 
             for(i=0;i<button_len;i++){//put按鈕資料
                 for(j=0;j<real_len;j++){
