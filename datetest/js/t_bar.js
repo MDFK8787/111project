@@ -4,7 +4,6 @@ var call_close = [];
 var put_strike = [];
 var put_open = [];
 var put_close = [];
-var button_len = call_strike.length;
 
 function strikedata(){
     var time1 = document.getElementById('time');
@@ -44,6 +43,7 @@ function strikedata(){
 
             //console.log(call_strike);
 
+            var button_len = call_strike.length;
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
             var tdata = document.getElementById('t_data');
             if (tdata_len !== button_len) {//讓按鈕可以印到所有選到的資料呈現出來為止
@@ -124,6 +124,7 @@ function put_t_data(){
             //console.log(put_close);
 
             var tdata_len = document.getElementById('t_data').rows.length;//HTML上的按鈕行數長度
+            button_len = call_strike.length;
             var real_len = put_strike.length;
 
             console.log(real_len);
