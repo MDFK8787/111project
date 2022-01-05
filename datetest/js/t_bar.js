@@ -1,3 +1,4 @@
+change = 0;
 call_strike = [];//所選資料暫存陣
 call_open = [];
 call_close = [];
@@ -25,6 +26,7 @@ function strikedata(){
             for(i=0;i<len_json;i++){//從一個禮拜當中選出我們要的時間點
 
                 var a = json[i];
+                change = a;
                 var b = a['date'];//指定的日期
                 var c = a['time'];//指定的時間
                 var type = a['type'];//put or call
@@ -32,9 +34,9 @@ function strikedata(){
                 if (b==date.value){//抓json中日期一樣的資料
                     if (c==time1){//抓json中時間一樣的資料
                         if(type=='C'){//抓json中call的資料
-                            call_strike.push(a['strike']);
-                            call_open.push(a['open']);
-                            call_close.push(a['close']);
+                            call_strike.push(change['strike']);
+                            call_open.push(change['open']);
+                            call_close.push(change['close']);
                         };
                     };
                 };
