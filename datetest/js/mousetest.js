@@ -8,8 +8,8 @@ if (a.pageX || a.pageY) {
     posY = a.clientY + document.documentElement.scrollTop + document.body.scrollTop;
 }*/
 window.addEventListener('mousemove',e=>{
-    x = clientX;
-    y = clientY;
+    x = e.clientX;
+    y = e.clientY;
     xx = document.getElementById('x');
     yy = document.getElementById('y');
     xx.textContent = 'x:'+ x;
