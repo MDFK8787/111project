@@ -133,13 +133,13 @@ var myChartline = new Chart(ctx, {
                 }
             },
             y: {
+                suggestedMin: -100,
+                suggestedMax: 100,
                 beginAtZero: true,
                 grid:{
                     color:'white'
                 },
                 ticks:{
-                    suggestedMin: -100,
-                    suggestedMax: 100,
                     stepsize: 50,
                     display: true,
 
