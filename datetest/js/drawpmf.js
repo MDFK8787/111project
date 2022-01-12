@@ -87,7 +87,68 @@ var myChartline = new Chart(ctx2, {
     },
     plugins:[plugin]//線的插入點
 });            
-//console.log(Chart)            
+//console.log(Chart)
+
+var ctx = document.getElementById('myChart').getContext('2d');//線型pmf
+var myChartline = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels:[-100,-100,0,100,100],
+        datasets: [{
+            label: 'profit & lost',
+            lineTension: 0,
+            fill: true,
+            data:[1000,2000,3000,4000,5000],
+            backgroundColor: [
+                'rgba(255, 104, 171, 0.47)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+
+            tension:0.4
+        }
+    ]
+    },
+    options: {
+        maintainAspectRatio: false,
+        elements:{
+            point:{
+                radius:0
+            }
+        },
+        scales: {
+            x: {
+                beginAtZero: true,
+                grid:{
+                    color:'white'
+                },
+                ticks:{
+                    display: true,
+                    stepsize: 10,
+                    autoSkip: true,
+                    maxTicksLimit: 10,
+                    color:'black',
+                    fontcolor:'black'
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid:{
+                    color:'white'
+                },
+                ticks:{
+                    stepsize: 10,
+                    display: true,
+                    autoSkip: true,
+                    maxTicksLimit: 10,
+                    color:'black',
+                    fontcolor:'black'
+                }
+            }
+        }
+    },
+});
 
 function showdate(){//確定按下去會執行的地方
     var date = document.getElementById('date');
