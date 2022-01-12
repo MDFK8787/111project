@@ -35,13 +35,8 @@ function show_detail(botton_id){
             quote = botton_id.textContent,
             button_id = botton_id.id;
     }
-    console.log(rowdata);
-    console.log(buysell);
-    console.log(CP);
-    console.log(strike);
-    console.log(quote);
-
-    array[row] = new Array;
+    
+    array[row] = new Array;//雙重陣列
     array[row][0] = rowdata;
     array[row][1] = buysell;
     array[row][2] = CP;
