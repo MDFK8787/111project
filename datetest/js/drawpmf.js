@@ -24,6 +24,8 @@ var plugin = {//資料點上的線
     }
 };
 
+
+
 var ctx2 = document.getElementById('myChartline').getContext('2d');//線型pmf
 var myChartline = new Chart(ctx2, {
     type: 'line',
@@ -46,7 +48,7 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        
+        maintainAspectRatio: false,
         elements:{
             point:{
                 radius:0
@@ -90,7 +92,7 @@ function showdate(){//確定按下去會執行的地方
     var time = document.getElementById('time');
     var c = document.getElementById('c');
     //console.log(date.value);
-    console.log(time.value);//確認有抓到輸入的日期時間的地方
+    //console.log(time.value);//確認有抓到輸入的日期時間的地方
     var weekArray = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat');
     date = date.value;
     date = date.replace(/-/g,'/');
