@@ -89,16 +89,29 @@ var myChartline = new Chart(ctx2, {
 });            
 //console.log(Chart)
 
-var ctx = document.getElementById('myChart').getContext('2d');//線型pmf
+var ctx = document.getElementById('myChart').getContext('2d');//profit&lost testing
 var myChartline = new Chart(ctx, {
     type: 'line',
     data: {
         labels:[1000,2000,3000,4000,5000],
         datasets: [{
-            label: 'profit & lost',
+            label: 'profit',
             lineTension: 0,
             fill: true,
-            data:[-50,-50,0,50,50],
+            data:[50,50,0,null,null],
+            backgroundColor: [
+                'rgba(146, 255, 140, 1)',
+            ],
+            borderColor: [
+                'rgba(11, 215, 0, 1)',
+            ],
+
+            tension:0.4
+        },{
+            label: 'lost',
+            lineTension: 0,
+            fill: true,
+            data:[null,null,0,-50,-50],
             backgroundColor: [
                 'rgba(255, 104, 171, 0.47)',
             ],
