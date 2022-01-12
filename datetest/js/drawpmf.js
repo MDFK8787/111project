@@ -48,6 +48,7 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
+        responsive: true,
         maintainAspectRatio: false,
         elements:{
             point:{
