@@ -1,3 +1,7 @@
+
+var p = [];//profit
+var l = [];//lost
+
 var ctx3 = document.getElementById('plchart').getContext('2d');//profit&lost testing
 var plchart = new Chart(ctx3, {
     type: 'line',
@@ -7,7 +11,7 @@ var plchart = new Chart(ctx3, {
             label: 'profit',
             lineTension: 0,
             fill: true,
-            data:[50,50,null,null,null],
+            data:p,
             backgroundColor: [
                 'rgba(146, 255, 140, 0.5)',
             ],
@@ -20,7 +24,7 @@ var plchart = new Chart(ctx3, {
             label: 'lost',
             lineTension: 0,
             fill: true,
-            data:[null,50,0,-50,-50],
+            data:l,
             backgroundColor: [
                 'rgba(255, 104, 171, 0.5)',
             ],
@@ -72,3 +76,30 @@ var plchart = new Chart(ctx3, {
         }
     },
 });
+
+function drawPL(botton_id){ 
+
+    p.length= 0;
+    l.length= 0;
+
+    if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {//將t字帳按的按鈕的所有資料暫存進陣列
+        p=[null,null,null,null,null];
+        l=[50,50,0,-50,-50];
+        plchart.update();
+
+    } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
+        p=[50,50,null,null,null];
+        l=[null,50,0,-50,-50];
+        plchart.update();
+
+    } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
+        p=[50,50,0,-50,null];
+        l=[null,null,null,-50,-50];
+        plchart.update();
+
+    } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
+        p=[50,50,0,-50,-50];
+        l=[null,null,null,null,null];
+        plchart.update();
+    }
+}
