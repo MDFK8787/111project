@@ -124,7 +124,7 @@ var myChartline = new Chart(ctx, {
                     color:'white'
                 },
                 ticks:{
-                    display: true,
+                    display: false,
                     stepsize: 10,
                     autoSkip: true,
                     maxTicksLimit: 10,
@@ -141,7 +141,7 @@ var myChartline = new Chart(ctx, {
                 },
                 ticks:{
                     stepsize: 50,
-                    display: true,
+                    display: false,
 
                     color:'black',
                     fontcolor:'black'
