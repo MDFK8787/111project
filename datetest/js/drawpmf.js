@@ -93,12 +93,12 @@ var ctx = document.getElementById('myChart').getContext('2d');//線型pmf
 var myChartline = new Chart(ctx, {
     type: 'line',
     data: {
-        labels:[-100,-100,0,100,100],
+        labels:[1000,2000,3000,4000,5000],
         datasets: [{
             label: 'profit & lost',
             lineTension: 0,
             fill: true,
-            data:[1000,2000,3000,4000,5000],
+            data:[-100,-100,0,100,100],
             backgroundColor: [
                 'rgba(255, 104, 171, 0.47)',
             ],
@@ -119,7 +119,7 @@ var myChartline = new Chart(ctx, {
         },
         scales: {
             x: {
-                beginAtZero: true,
+                beginAtZero: false,
                 grid:{
                     color:'white'
                 },
@@ -133,7 +133,7 @@ var myChartline = new Chart(ctx, {
                 }
             },
             y: {
-                beginAtZero: true,
+                beginAtZero: false,
                 grid:{
                     color:'white'
                 },
