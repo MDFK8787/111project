@@ -100,7 +100,7 @@ var myChartline = new Chart(ctx, {
             fill: true,
             data:[50,50,0,null,null],
             backgroundColor: [
-                'rgba(146, 255, 140, 1)',
+                'rgba(146, 255, 140, 0.5)',
             ],
             borderColor: [
                 'rgba(11, 215, 0, 1)',
@@ -113,7 +113,7 @@ var myChartline = new Chart(ctx, {
             fill: true,
             data:[null,null,0,-50,-50],
             backgroundColor: [
-                'rgba(255, 104, 171, 0.47)',
+                'rgba(255, 104, 171, 0.5)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
