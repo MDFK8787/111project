@@ -48,7 +48,6 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        responsive: true,
         maintainAspectRatio: false,
         elements:{
             point:{
@@ -63,6 +62,7 @@ var myChartline = new Chart(ctx2, {
                 },
                 ticks:{
                     display: true,
+                    stepsize: 10,
                     autoSkip: true,
                     maxTicksLimit: 10,
                     color:'black',
@@ -75,6 +75,7 @@ var myChartline = new Chart(ctx2, {
                     color:'white'
                 },
                 ticks:{
+                    stepsize: 10,
                     display: true,
                     autoSkip: true,
                     maxTicksLimit: 10,
