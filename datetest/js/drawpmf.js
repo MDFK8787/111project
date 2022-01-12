@@ -98,7 +98,7 @@ var plchart = new Chart(ctx3, {
             label: 'profit',
             lineTension: 0,
             fill: true,
-            data:[50,50,0,null,null],
+            data:[50,50,null,null,null],
             backgroundColor: [
                 'rgba(146, 255, 140, 0.5)',
             ],
@@ -111,7 +111,7 @@ var plchart = new Chart(ctx3, {
             label: 'lost',
             lineTension: 0,
             fill: true,
-            data:[null,null,0,-50,-50],
+            data:[null,50,0,-50,-50],
             backgroundColor: [
                 'rgba(255, 104, 171, 0.5)',
             ],
