@@ -79,6 +79,8 @@ var plchart = new Chart(ctx3, {
 
 function drawPL(botton_id){ 
     console.log('100');
+    console.log(p);
+    console.log(l);
     p.length= 0;
     l.length= 0;
 
@@ -102,4 +104,6 @@ function drawPL(botton_id){
         l=[null,null,null,null,null];
         plchart.update();
     }
+    console.log(p);
+    console.log(l);
 }
