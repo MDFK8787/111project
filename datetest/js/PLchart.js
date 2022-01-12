@@ -78,7 +78,7 @@ var plchart = new Chart(ctx3, {
 });
 
 function drawPL(botton_id){ 
-
+    console.log('100');
     p.length= 0;
     l.length= 0;
 
