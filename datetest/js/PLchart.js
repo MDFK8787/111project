@@ -85,6 +85,45 @@ function drawPL(botton_id){
     l.length= 0;
 
     if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {//將t字帳按的按鈕的所有資料暫存進陣列
+        p.push(50);
+        p.push(50);
+        p.push(0);
+        p.push(-50);
+        p.push(-50);
+        l.push(null);
+        l.push(null);
+        l.push(null);
+        l.push(null);
+        l.push(null);
+        plchart.update();
+
+    } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
+        p.push(50);
+        p.push(50);
+        p.push(0);
+        p.push(-50);
+        p.push(null);
+        l.push(null);
+        l.push(null);
+        l.push(null);
+        l.push(-50);
+        l.push(-50);
+        plchart.update();
+
+    } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
+        p.push(50);
+        p.push(50);
+        p.push(null);
+        p.push(null);
+        p.push(null);
+        l.push(null);
+        l.push(50);
+        l.push(0);
+        l.push(-50);
+        l.push(-50);
+        plchart.update();
+
+    } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
         p.push(null);
         p.push(null);
         p.push(null);
@@ -95,21 +134,6 @@ function drawPL(botton_id){
         l.push(0);
         l.push(-50);
         l.push(-50);
-        plchart.update();
-
-    } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
-        p=[50,50,null,null,null];
-        l=[null,50,0,-50,-50];
-        plchart.update();
-
-    } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
-        p=[50,50,0,-50,null];
-        l=[null,null,null,-50,-50];
-        plchart.update();
-
-    } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
-        p=[50,50,0,-50,-50];
-        l=[null,null,null,null,null];
         plchart.update();
     }
     console.log(p);
