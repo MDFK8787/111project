@@ -98,7 +98,7 @@ var myChartline = new Chart(ctx, {
             label: 'profit & lost',
             lineTension: 0,
             fill: true,
-            data:[-100,-100,0,100,100],
+            data:[-50,-50,0,50,50],
             backgroundColor: [
                 'rgba(255, 104, 171, 0.47)',
             ],
@@ -138,10 +138,11 @@ var myChartline = new Chart(ctx, {
                     color:'white'
                 },
                 ticks:{
+                    min: -100,
+                    max: 100,
                     stepsize: 10,
                     display: true,
-                    autoSkip: true,
-                    maxTicksLimit: 10,
+
                     color:'black',
                     fontcolor:'black'
                 }
