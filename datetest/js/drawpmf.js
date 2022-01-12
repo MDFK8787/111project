@@ -89,8 +89,8 @@ var myChartline = new Chart(ctx2, {
 });            
 //console.log(Chart)
 
-var ctx = document.getElementById('myChart').getContext('2d');//profit&lost testing
-var myChartline = new Chart(ctx, {
+var ctx3 = document.getElementById('plchart').getContext('2d');//profit&lost testing
+var plchart = new Chart(ctx3, {
     type: 'line',
     data: {
         labels:[1000,2000,3000,4000,5000],
