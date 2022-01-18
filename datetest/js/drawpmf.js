@@ -52,12 +52,6 @@ var myChartline = new Chart(ctx2, {
                 radius:0
             }
         },
-        layout:{
-            padding:{
-                left: 50,
-                bottom: 50
-            }
-        },
         scales: {
             x: {
                 beginAtZero: true,
