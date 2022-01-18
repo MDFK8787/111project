@@ -52,7 +52,12 @@ var myChartline = new Chart(ctx2, {
                 radius:0
             }
         },
-        
+        layout:{
+            padding:{
+                left: 50,
+                bottom: 50
+            }
+        },
         scales: {
             x: {
                 beginAtZero: true,
@@ -134,7 +139,7 @@ function showdate(){//確定按下去會執行的地方
 
                 var prob = json[i].field1;//抓出index
                             
-                prob1 = (++prob)*c.value;//轉換成歷史指數,之後變數c要連歷史資料##
+                prob1 = Math.round((++prob)*c.value);//轉換成歷史指數,之後變數c要連歷史資料##
                 //console.log(prob);
                 y.push(prob1);
 
@@ -143,7 +148,7 @@ function showdate(){//確定按下去會執行的地方
 
             for (i=9;i<x.length;i++){//線型pmf
                             
-                var xxx = Math.round((x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10);//剩餘時間計算公式
+                var xxx =(x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
                 linex1.push(xxx);
                 
             };
