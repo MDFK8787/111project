@@ -153,7 +153,7 @@ function showdate(){//確定按下去會執行的地方
                 
             };
             //console.log(x.length);
-            console.log(linex1.length);
+            console.log(linex1);
 
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
