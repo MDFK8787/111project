@@ -88,3 +88,15 @@ function removerow(selected) {
         reset_item.innerHTML = i+1;
     }		
 }
+
+function Clearallrow(array) {
+    var table = document.getElementById("row_data");
+    var row_len = document.getElementById("row_data").rows.length;
+    for (var i = 0; i < row_len; i++) { //清除contracts_array資料
+        array.pop();
+    }
+    for (var i = 0; i < row_len; i++) { //清除所有欄位							
+        document.getElementById("row_data").deleteRow(0);
+    }
+    row = document.getElementById("row_data").rows.length; //讓row回歸0													
+}
