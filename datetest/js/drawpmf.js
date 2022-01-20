@@ -205,7 +205,7 @@ var myChart = new Chart(ctx, {
                     autoSkip: true,
                     maxTicksLimit: 10,
                     color:'white',
-                    fontcolor:'white'
+                    fontcolor:'white'hi
                 }
             }
         }
