@@ -61,11 +61,11 @@ function strikedata(){
                         cell3 = newRow.insertCell(3),
                         cell4 = newRow.insertCell(4);
 
-                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "' name='"+ i.toString() +"' onclick='show_detail(button_call_open_price_" + i.toString() + ");drawPL(button_call_open_price_" + i.toString() + ");'>" + '--' + "</button>";//印出按鈕
-                    cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + "' name='"+ i.toString() +"' onclick='show_detail(button_call_close_price_" + i.toString() + ");drawPL(button_call_close_price_" + i.toString() + ");'>" + '--' + "</button>";
-                    cell2.innerHTML = cell2.innerHTML + "<font id='strike_data_"+ i.toString() +"'>" + 'strike' + "</font>";
-                    cell3.innerHTML = cell3.innerHTML + "<button id='button_put_open_price_" + i.toString() + "' name='"+ i.toString() +"' onclick='show_detail(button_put_open_price_" + i.toString() + ");drawPL(button_put_open_price_" + i.toString() + ");'>" + '--' + "</button>";
-                    cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + "' name='"+ i.toString() +"' onclick='show_detail(button_put_close_price_" + i.toString() + ");drawPL(button_put_close_price_" + i.toString() + ");'>" + '--' + "</button>";
+                    cell0.innerHTML = cell0.innerHTML + "<button id='button_call_open_price_" + i.toString() + "' name='"+ i.toString() +"' class='tbar_style' onclick='show_detail(button_call_open_price_" + i.toString() + ");drawPL(button_call_open_price_" + i.toString() + ");'>" + '--' + "</button>";//印出按鈕
+                    cell1.innerHTML = cell1.innerHTML + "<button id='button_call_close_price_" + i.toString() + "' name='"+ i.toString() +"' class='tbar_style' onclick='show_detail(button_call_close_price_" + i.toString() + ");drawPL(button_call_close_price_" + i.toString() + ");'>" + '--' + "</button>";
+                    cell2.innerHTML = cell2.innerHTML + "<font id='strike_data_"+ i.toString() +"' class='tbar_strike'>" + 'strike' + "</font>";
+                    cell3.innerHTML = cell3.innerHTML + "<button id='button_put_open_price_" + i.toString() + "' name='"+ i.toString() +"' class='tbar_style' onclick='show_detail(button_put_open_price_" + i.toString() + ");drawPL(button_put_open_price_" + i.toString() + ");'>" + '--' + "</button>";
+                    cell4.innerHTML = cell4.innerHTML + "<button id='button_put_close_price_" + i.toString() + "' name='"+ i.toString() +"' class='tbar_style' onclick='show_detail(button_put_close_price_" + i.toString() + ");drawPL(button_put_close_price_" + i.toString() + ");'>" + '--' + "</button>";
                 };
 
                 for (var i = 0; i < button_len; i++) {//call按鈕資料
