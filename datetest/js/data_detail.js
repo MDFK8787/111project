@@ -59,7 +59,7 @@ function Newrow(array, row) {
     cell4 = newRow.insertCell(4);
     cell5 = newRow.insertCell(5);
     cell6 = newRow.insertCell(6);
-    newRow.setAttribute('class', 'active-row');
+    newRow.setAttribute('class', 'active_row');
 
     cell0.innerHTML = array[row][0];
     cell1.innerHTML = array[row][1];
