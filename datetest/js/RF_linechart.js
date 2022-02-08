@@ -24,7 +24,7 @@ var plugin = {//資料點上的線
     }
 };
 
-var ctx2 = document.getElementById('myChartline').getContext('2d');//線型pmf
+var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
     type: 'line',
     data: {
@@ -108,7 +108,7 @@ function showdate(){//確定按下去會執行的地方
                 
     //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json");
+    request.open("get", "C:/Users/User/Desktop/專題/F9/F9_output/otm2_spread100/json/RF_output_2021.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
