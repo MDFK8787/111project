@@ -113,7 +113,7 @@ function showdate(){//確定按下去會執行的地方
     request.onload = function () {
         if (request.status == 200) {
             var json = JSON.parse(request.responseText);
-            //console.log(json);
+            console.log(json);
 
             x.length = 0;//讓上一個被輸入的圖表y資料被清除
             y.length = 0;//讓上一個被輸入的圖表x資料被清除
