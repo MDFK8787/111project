@@ -108,7 +108,7 @@ function showdate(){//確定按下去會執行的地方
                 
     //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/datetest/js/RF_linechart.json");
+    request.open("get", "https://mdfk8787.github.io/111project/datetest/json/20211229.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
