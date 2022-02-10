@@ -32,7 +32,7 @@ var myChartline = new Chart(ctx2, {
             label: 'linepmf1',
             lineTension: 0,
             fill: true,
-            data: x,
+            data: linex1,
             backgroundColor: [
                 'rgba(255, 104, 171, 0.47)',
             ],
@@ -127,10 +127,20 @@ function showdate(){//確定按下去會執行的地方
                 y.push(prob1);
 
             };
+            linex1.length = 0;//讓上一個被輸入的圖表linex資料被清除
+
+            for (i=9;i<x.length;i++){//線型pmf
+                            
+                var xxx =(x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
+                linex1.push(xxx);
+                
+            };
+            //console.log(x.length);
+            console.log(linex1);
 
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
-            myChartline.data.datasets[0].data = x;//線型y軸紅色區域
+            myChartline.data.datasets[0].data = linex1;//線型y軸紅色區域
             //myChart.update()//讓圖表更新
             myChartline.update()
         };
