@@ -32,7 +32,7 @@ var myChartline = new Chart(ctx2, {
             label: 'linepmf1',
             lineTension: 0,
             fill: true,
-            data: linex1,
+            data: x,
             backgroundColor: [
                 'rgba(255, 104, 171, 0.47)',
             ],
