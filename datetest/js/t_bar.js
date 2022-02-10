@@ -87,7 +87,7 @@ function strikedata(){
     put_t_data()
               
 }
-console.log(call_strike);
+//console.log(call_strike);
 function put_t_data(){
 
     var time1 = document.getElementById('time');
