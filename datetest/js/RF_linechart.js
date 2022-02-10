@@ -25,7 +25,7 @@ var plugin = {//資料點上的線
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: y,
         datasets: [{
