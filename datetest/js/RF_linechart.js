@@ -92,18 +92,14 @@ function showdate(){//確定按下去會執行的地方
     var c = document.getElementById('c');
     console.log(date.value);
     console.log(time.value);//確認有抓到輸入的日期時間的地方
-    var weekArray = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat');
+    //var weekArray = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat');
     date = date.value;
     date = date.replace(/-/g,'/');
-    var day = new Date(date).getDay();//將日期轉換成csv要用的形式
     //console.log(day);
     //console.log(weekArray[day]);
     time = time.value;
-    time = time.replace(/:/g,'');
-    time = time+'00';//將時間轉換成csv要用的形式
-    var select = weekArray[day]+'_'+time;//之後用來尋找csv列的名字的變數
-    //console.log(time);
-    //console.log(select);
+    var select = date+' '+time;//之後用來尋找csv列的名字的變數
+    console.log(select);
 
                 
     //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
