@@ -14,7 +14,7 @@ function gaussian(x) {
    return gaussianConstant * Math.exp(-.5 * x * x) / sigma;
 };
 var ctx = document.getElementById('myChart').getContext('2d');
-var myLineChart = new Chart("myChart", {
+var myChart = new Chart("myChart", {
    type: 'scatter',
    data: {
       datasets: [{
