@@ -15,7 +15,7 @@ function gaussian(x) {
 };
 var ctx = document.getElementById('myChart').getContext('2d');
 var myLineChart = new Chart("myChart", {
-   type: 'line',
+   type: 'scatter',
    data: {
       datasets: [{
          label:"Gaussian",
