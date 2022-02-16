@@ -20,7 +20,14 @@ var myLineChart = new Chart("myChart", {
       datasets: [{
          label:"Gaussian",
          data:data,
-         showLine:true
+         showLine:true//顯示出線
       }]
-   }
+   },
+   options: {
+    elements: {
+        point:{
+            radius: 0
+        }
+    }
+}
 });
