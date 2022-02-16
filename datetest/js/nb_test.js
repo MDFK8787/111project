@@ -19,7 +19,8 @@ var myLineChart = new Chart("myChart", {
    data: {
       datasets: [{
          label:"Gaussian",
-         data:data
+         data:data,
+         showLine:true
       }]
    }
 });
