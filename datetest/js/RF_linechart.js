@@ -36,17 +36,17 @@ var myChartline = new Chart(ctx2, {
             label: 'linepmf1',
             fill: true,
             data: linex1,
-            pointHitRadius: 0,
-            backgroundColor:'rgba(255, 104, 171, 0.47)',
-            borderColor:'rgba(255, 99, 132, 1)',
+            backgroundColor:'rgba(0, 0, 0, 0.39)',
+            borderColor:'rgba(0, 0, 0, 0.39)',
             tension:1
         },{
             label: 'normal distribution',
             fill: true,
             data:data,
+            pointHitRadius: 0,
             showLine:true,//顯示出線
-            backgroundColor:'rgba(0, 255, 132, 1)',
-            borderColor:'rgba(0, 255, 132, 1)',
+            backgroundColor:'rgba(255, 0, 0, 0.3)',
+            borderColor:'rgba(255, 0, 0, 0.3)',
             type: 'scatter'
         }
     ]
