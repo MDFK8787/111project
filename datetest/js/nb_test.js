@@ -24,7 +24,7 @@ var myChart = new Chart("myChart", {
       }]
    },
    options: {
-    bezierCurve : false,
+    bezierCurve : true,
     elements: {
         point:{
             radius: 0
