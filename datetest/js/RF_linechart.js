@@ -146,7 +146,12 @@ function showdate(){//確定按下去會執行的地方
                 linex1.push(xxx);
                 
             };
-            console.log(linex1);
+
+            real_x.sort(function (a, b) {
+                return a - b
+            });
+            console.log(real_x);
+
             data.length = 0;
             for(x=0;x<linex1.length;x+=1) {
                 var y = gaussian(x)
