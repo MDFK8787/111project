@@ -1,5 +1,5 @@
-var x = [];
-var y = [];
+var real_x = [];
+var real_y = [];
 var linex1 = [];//線型pmf的y軸
 
 var plugin = {//資料點上的線
@@ -27,7 +27,7 @@ var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
     type: 'line',
     data: {
-        labels: y,
+        labels: real_y,
         datasets: [{
             label: 'linepmf1',
             lineTension: 0,
@@ -107,8 +107,8 @@ function showdate(){//確定按下去會執行的地方
             var json = JSON.parse(request.responseText);
             console.log(json);
 
-            x.length = 0;//讓上一個被輸入的圖表y資料被清除
-            y.length = 0;//讓上一個被輸入的圖表x資料被清除
+            real_x.length = 0;//讓上一個被輸入的圖表y資料被清除
+            real_y.length = 0;//讓上一個被輸入的圖表x資料被清除
 
             var len_json = Object.keys(json).length; //宣告json長度
             for (i=0;i<len_json;i++){
@@ -118,20 +118,20 @@ function showdate(){//確定按下去會執行的地方
                 var strike2 = strike[select];//用日期時間的select選擇陣列
                             
                             
-                x.push(strike2);//將得到的 列 資料放進陣列當中
+                real_x.push(strike2);//將得到的 列 資料放進陣列當中
 
                 var prob = json[i].field1;//抓出index
                             
                 prob1 = Math.round((++prob)*c.value);//轉換成歷史指數,之後變數c要連歷史資料##
                 //console.log(prob);
-                y.push(prob1);
+                real_y.push(prob1);
 
             };
             linex1.length = 0;//讓上一個被輸入的圖表linex資料被清除
 
-            for (i=9;i<x.length;i++){//線型pmf
+            for (i=9;i<real_x.length;i++){//線型pmf
                             
-                var xxx =(x[i]+x[i-9]+x[i-8]+x[i-7]+x[i-6]+x[i-5]+x[i-4]+x[i-3]+x[i-2]+x[i-1])/10;//剩餘時間計算公式
+                var xxx =(real_x[i]+real_x[i-9]+real_x[i-8]+real_x[i-7]+real_x[i-6]+real_x[i-5]+real_x[i-4]+real_x[i-3]+real_x[i-2]+real_x[i-1])/10;//剩餘時間計算公式
                 linex1.push(xxx);
                 
             };
