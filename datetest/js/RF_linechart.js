@@ -160,6 +160,7 @@ function showdate(){//確定按下去會執行的地方
             console.log(data);
 
             myChartline.data.datasets[0].data = linex1;//線型y軸紅色區域
+            myChartline.data.datasets[1].data = data;
             //myChart.update()//讓圖表更新
             myChartline.update()
         };
