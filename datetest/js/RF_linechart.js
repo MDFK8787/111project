@@ -4,7 +4,7 @@ var linex1 = [];//線型pmf的y軸
 var data = [];//常態分配資料
 var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
-      sigma = 40;
+      sigma = 80;
 
 var plugin = {//資料點上的線
     afterDatasetsDraw: function(chart) {
