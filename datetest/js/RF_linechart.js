@@ -33,14 +33,18 @@ var myChartline = new Chart(ctx2, {
             lineTension: 0,
             fill: true,
             data: linex1,
-            backgroundColor: [
-                'rgba(255, 104, 171, 0.47)',
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-            ],
-
+            backgroundColor:'rgba(255, 104, 171, 0.47)',
+            borderColor:'rgba(255, 99, 132, 1)',
             tension:1
+        },{
+            label: 'normal distribution',
+            lineTension: 0,
+            fill: true,
+            data: linex1,
+            backgroundColor:'rgba(255, 104, 171, 0.47)',
+            borderColor:'rgba(0, 255, 132, 1)',
+            tension:1,
+            type: 'bar'
         }
     ]
     },
@@ -116,12 +120,10 @@ function showdate(){//確定按下去會執行的地方
 
                 var strike = json[i];//將每一個index的陣列分別抓出來讓select可以選日期時間的columns
                 var strike2 = strike[select];//用日期時間的select選擇陣列
-                            
-                            
+                                     
                 real_x.push(strike2);//將得到的 列 資料放進陣列當中
 
-                var prob = json[i].field1;//抓出index
-                            
+                var prob = json[i].field1;//抓出index    
                 prob1 = Math.round((++prob)*c.value);//轉換成歷史指數,之後變數c要連歷史資料##
                 //console.log(prob);
                 real_y.push(prob1);
