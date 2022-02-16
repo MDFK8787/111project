@@ -155,7 +155,7 @@ function showdate(){//確定按下去會執行的地方
             data.length = 0;
             for(x=0;x<linex1.length;x+=1) {
                 var y = gaussian(x)
-                data.push({x:x,y:y*scaleFactor});
+                data.push({x:real_x[x],y:y*scaleFactor});
             }
             console.log(data);
 
