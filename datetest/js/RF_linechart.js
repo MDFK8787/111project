@@ -40,7 +40,7 @@ var myChartline = new Chart(ctx2, {
                 'rgba(255, 99, 132, 1)',
             ],
 
-            tension:0.4
+            tension:1
         }
     ]
     },
