@@ -147,7 +147,7 @@ function showdate(){//確定按下去會執行的地方
                 
             };
             console.log(linex1);
-
+            data.length = 0;
             for(x=0;x<linex1.length;x+=1) {
                 var y = gaussian(x)
                 data.push({x:x,y:y*scaleFactor});
