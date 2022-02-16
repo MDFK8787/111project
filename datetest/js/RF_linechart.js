@@ -1,6 +1,10 @@
 var real_x = [];
 var real_y = [];
 var linex1 = [];//線型pmf的y軸
+var data = [];//常態分配資料
+var scaleFactor = 100
+      mean = 417,//from   w ww. de m o  2  s .  co  m
+      sigma = 80;
 
 var plugin = {//資料點上的線
     afterDatasetsDraw: function(chart) {
@@ -30,7 +34,6 @@ var myChartline = new Chart(ctx2, {
         labels: real_y,
         datasets: [{
             label: 'linepmf1',
-            lineTension: 0,
             fill: true,
             data: linex1,
             pointHitRadius: 0,
@@ -39,13 +42,12 @@ var myChartline = new Chart(ctx2, {
             tension:1
         },{
             label: 'normal distribution',
-            lineTension: 0,
             fill: true,
-            data: linex1,
+            data:data,
+            showLine:true,//顯示出線
             backgroundColor:'rgba(0, 255, 132, 1)',
             borderColor:'rgba(0, 255, 132, 1)',
-            tension:1,
-            type: 'bar'
+            type: 'scatter'
         }
     ]
     },
@@ -89,7 +91,13 @@ var myChartline = new Chart(ctx2, {
     },
     plugins:[plugin]//線的插入點
 });            
-//console.log(Chart)
+
+function gaussian(x) {//PDF
+    var gaussianConstant = 1 / Math.sqrt(2 * Math.PI);
+    x = (x - mean) / sigma;
+    return gaussianConstant * Math.exp(-.5 * x * x) / sigma;
+ };
+
 function showdate(){//確定按下去會執行的地方
     var date = document.getElementById('date');
     var time = document.getElementById('time');
@@ -138,8 +146,12 @@ function showdate(){//確定按下去會執行的地方
                 linex1.push(xxx);
                 
             };
-            //console.log(x.length);
             console.log(linex1);
+
+            for(x=0;x<linex1.length;x+=1) {
+                var y = gaussian(x)
+                data.push({x:x,y:y*scaleFactor});
+            }
 
             //myChart.data.label = y;//x軸
             //myChart.data.datasets[0].data = x;//y軸
