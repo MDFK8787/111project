@@ -40,7 +40,7 @@ var myChartline = new Chart(ctx2, {
             borderColor:'rgba(0, 0, 0, 0.39)',
             tension:1
         },{
-            label: 'normal distribution',
+            label:false,
             fill: true,
             data:data,
             pointHitRadius: 0,
