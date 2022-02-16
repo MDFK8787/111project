@@ -12,13 +12,13 @@ var plugin = {//資料點上的線
             var activePoint = chart.tooltip._active[0];
             var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
-            console.log(chart.chartArea.bottom)
+            //console.log(chart.chartArea.bottom)
 
             ctx.save();
             ctx.beginPath();
             ctx.setLineDash([5,7]);//虛線
             ctx.moveTo(activePoint.element.x, 32);//讓程式知道要在網頁的哪個座標x顯示線,32是線的最高點
-            ctx.lineTo(activePoint.element.x, 586.1671534784361);//線的最低點
+            ctx.lineTo(activePoint.element.x, 450.07051577800826);//線的最低點
             ctx.lineWidth = 2;
             ctx.strokeStyle = 'green';
             ctx.stroke();
