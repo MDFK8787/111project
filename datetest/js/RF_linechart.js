@@ -33,6 +33,7 @@ var myChartline = new Chart(ctx2, {
             lineTension: 0,
             fill: true,
             data: linex1,
+            pointHitRadius: 0,
             backgroundColor:'rgba(255, 104, 171, 0.47)',
             borderColor:'rgba(255, 99, 132, 1)',
             tension:1
