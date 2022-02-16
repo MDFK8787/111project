@@ -41,7 +41,7 @@ var myChartline = new Chart(ctx2, {
             lineTension: 0,
             fill: true,
             data: linex1,
-            backgroundColor:'rgba(255, 104, 171, 0.47)',
+            backgroundColor:'rgba(0, 255, 132, 1)',
             borderColor:'rgba(0, 255, 132, 1)',
             tension:1,
             type: 'bar'
