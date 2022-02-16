@@ -1,6 +1,6 @@
 var data = [];
 var scaleFactor = 10
-      mean = 12,//from   w ww. de m o  2  s .  co  m
+      mean = 100,//from   w ww. de m o  2  s .  co  m
       sigma = 4;
 for(x=0;x<825;x+=1) {
    var y = gaussian(x)
