@@ -1,7 +1,7 @@
 var data = [];
 var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
-      sigma = 40;
+      sigma = 80;
 for(x=0;x<825;x+=1) {
    var y = gaussian(x)
    data.push({x:x,y:y*scaleFactor});
