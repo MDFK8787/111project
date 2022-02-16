@@ -98,12 +98,10 @@ function gaussian(x) {//PDF
     return gaussianConstant * Math.exp(-.5 * x * x) / sigma;
  };
 
-function showdate(){//確定按下去會執行的地方
+function showdate(){//按下確定按鈕執行的地方
     var date = document.getElementById('date');
     var time = document.getElementById('time');
     var c = document.getElementById('c');
-    //console.log(date.value);
-    //console.log(time.value);//確認有抓到輸入的日期時間的地方
     //var weekArray = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat');
     date = date.value;
     date = date.replace(/-/g,'/');
@@ -138,6 +136,7 @@ function showdate(){//確定按下去會執行的地方
                 real_x.push(prob1);
 
             };
+            console.log(real_y);
             linex1.length = 0;//讓上一個被輸入的圖表linex資料被清除
 
             for (i=9;i<real_y.length;i++){//線型pmf
@@ -146,11 +145,10 @@ function showdate(){//確定按下去會執行的地方
                 linex1.push(xxx);
                 
             };
-
+            console.log(linex1);
             real_x.sort(function (a, b) {
                 return a - b
             });
-            console.log(real_x);
 
             data.length = 0;
             for(x=0;x<linex1.length;x+=1) {
