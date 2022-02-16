@@ -12,7 +12,7 @@ var plugin = {//資料點上的線
             var activePoint = chart.tooltip._active[0];
             var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
-            //console.log(chart.chartArea.bottom)
+            console.log(chart.chartArea.bottom)
 
             ctx.save();
             ctx.beginPath();
