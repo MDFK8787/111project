@@ -116,7 +116,6 @@ function showdate(){//按下確定按鈕執行的地方
     request.onload = function () {
         if (request.status == 200) {
             var json = JSON.parse(request.responseText);
-            console.log(json);
 
             real_y.length = 0;//讓上一個被輸入的圖表y資料被清除
             real_x.length = 0;//讓上一個被輸入的圖表x資料被清除
@@ -155,7 +154,6 @@ function showdate(){//按下確定按鈕執行的地方
                 var y = gaussian(x)
                 data.push({x:real_x[x],y:y*scaleFactor});
             }
-            console.log(data);
 
             myChartline.data.datasets[0].data = linex1;//線型y軸紅色區域
             myChartline.data.datasets[1].data = data;
