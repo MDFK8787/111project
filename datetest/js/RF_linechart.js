@@ -219,7 +219,7 @@ var myChartline = new Chart(ctx2, {
         mode: 'index',
       },
     plugins:{
-        tooltips: {
+        tooltip: {
             enabled: false,
             intersect: false,
             mode: "index",
