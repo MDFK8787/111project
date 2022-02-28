@@ -25,7 +25,7 @@ var plugin = {//資料點上的線
             ctx.restore();
         }
     },
-    tooltips:{
+    tooltip:{
         enabled: false,
 		mode: 'nearest',
 		position: 'average',
