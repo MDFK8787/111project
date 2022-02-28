@@ -7,7 +7,7 @@ var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
       sigma = 80;
 
-var plugin = {//資料點上的線
+/*var plugin = {//資料點上的線
     afterDatasetsDraw: function(chart) {
        if(chart.tooltip._active && chart.tooltip._active.length) {
             var activePoint = chart.tooltip._active[0];
@@ -26,38 +26,7 @@ var plugin = {//資料點上的線
             ctx.restore();
         }
     }
-};
-
-var bottom = function(items) {
-    var pos = Tooltip.positioners.average(items);
-  
-    // Happens when nothing is found
-    if (pos === false) {
-      return false;
-    }
-  
-    var chart = this.chart;
-  
-    return {
-      x: pos.x,
-      y: chart.chartArea.bottom,
-      xAlign: 'center',
-      yAlign: 'bottom',
-    };
-}
-
-var myCustomPositioner  = function(elements, eventPosition) {
-    // A reference to the tooltip model
-    var chart = this.chart;
-    /* ... */
-    return {
-        x: 0,
-        y: 0,
-        xAlign: 'center',
-        yAlign: 'bottom',
-        // You may also include xAlign and yAlign to override those tooltip options.
-    };
-};
+};*/
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
@@ -125,11 +94,16 @@ var myChartline = new Chart(ctx2, {
         intersect: false,
         mode: 'index',
       },
-    plugins:[plugin],
-    tooltip:{
-        yAlign: 'top',
-        xAlign: 'center',
+    plugins:{
+        tooltips: {
+            enabled: false,
+            intersect: false,
+            mode: "index",
+            position: "average",
+            custom: customTooltips
+          }
     },
+    
     //線的插入點
 });            
 
