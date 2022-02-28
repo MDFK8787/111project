@@ -219,16 +219,14 @@ var myChartline = new Chart(ctx2, {
         mode: 'index',
       },
     plugins:{
-        
-    },
-    tooltips: {
-        enabled: false,
-        intersect: false,
-        mode: "index",
-        position: "average",
-        custom: customTooltips
+        tooltips: {
+            enabled: false,
+            intersect: false,
+            mode: "index",
+            position: "average",
+            custom: customTooltips
+        }
     }
-    
     //線的插入點
 });            
 
