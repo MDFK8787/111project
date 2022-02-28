@@ -53,8 +53,8 @@ var myChartline = new Chart(ctx2, {
     ]
     },
     options: {
-        title:{
-            display:false,
+        legend:{ 
+            display: false 
         },
         maintainAspectRatio: false,
         elements:{
