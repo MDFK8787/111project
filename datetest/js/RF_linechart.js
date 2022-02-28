@@ -282,7 +282,7 @@ function showdate(){//按下確定按鈕執行的地方
                             
                 var xxx =(real_y[i]+real_y[i-9]+real_y[i-8]+real_y[i-7]+real_y[i-6]+real_y[i-5]+real_y[i-4]+real_y[i-3]+real_y[i-2]+real_y[i-1])/10;//剩餘時間計算公式
                 if (xxx==NaN){
-                    linex1.push(0.0);
+                    linex1.push('0');
                 }else{
                     linex1.push(xxx);
                 }
