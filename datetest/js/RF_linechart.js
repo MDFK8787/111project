@@ -28,6 +28,127 @@ var scaleFactor = 100
     }
 };*/
 
+function customTooltips(tooltipModel) {
+    // Tooltip Element
+    var tooltipEl = document.getElementById("chartjs-tooltip");
+  
+    const yAlign = tooltipModel.yAlign;
+    const xAlign = tooltipModel.xAlign;
+  
+    // Create element on first render
+    if (!tooltipEl) {
+      tooltipEl = document.createElement("div");
+      tooltipEl.id = "chartjs-tooltip";
+      tooltipEl.innerHTML = "<table></table>";
+      document.body.appendChild(tooltipEl);
+    }
+  
+    // Hide if no tooltip
+    if (tooltipModel.opacity === 0) {
+      tooltipEl.style.opacity = 0;
+      return;
+    }
+  
+    // Set caret Position
+    tooltipEl.classList.remove("top", "bottom", "center", "left", "right");
+    // if (tooltipModel.yAlign || tooltipModel.xAlign) {
+    tooltipEl.classList.add(tooltipModel.yAlign);
+    tooltipEl.classList.add(tooltipModel.xAlign);
+    // }
+  
+    // Set Text
+    if (tooltipModel.body) {
+      var titleLines = tooltipModel.title || [];
+      var bodyLines = tooltipModel.body.map((bodyItem) => {
+        return bodyItem.lines;
+      });
+  
+      var innerHtml = "<thead>";
+  
+      titleLines.forEach(function (title) {
+        innerHtml += '<tr><th><div class="mb-1">' + title + "</div></th></tr>";
+      });
+      innerHtml += "</thead><tbody>";
+  
+      bodyLines.forEach((body, i) => {
+        var colors = tooltipModel.labelColors[i];
+        // var style = 'background-color:' + colors.borderColor
+        var style =
+          "background-color:" + this._chart.data.datasets[i].borderColor;
+        var value = tooltipModel.dataPoints[i].value;
+        var label = this._chart.data.datasets[i].label;
+  
+        style += "; border-color:" + colors.borderColor;
+        style += "; border-color:" + this._chart.data.datasets[i].borderColor;
+        style += "; border-width: 2px";
+  
+        var span =
+          '<span class="chartjs-tooltip-key" style="' + style + '"></span>';
+  
+        innerHtml += `<tr><td> ${span} $${value}K </td></tr>`;
+      });
+      innerHtml += "</tbody>";
+  
+      var tableRoot = tooltipEl.querySelector("table");
+      tableRoot.innerHTML = innerHtml;
+    }
+  
+    // Tooltip height and width
+    const { height, width } = tooltipEl.getBoundingClientRect();
+  
+    // Chart canvas positions
+    const positionY = this._chart.canvas.offsetTop;
+    const positionX = this._chart.canvas.offsetLeft;
+  
+    // Carets
+    const caretY = tooltipModel.caretY;
+    const caretX = tooltipModel.caretX;
+  
+    // Final coordinates
+    let top = positionY + window.pageYOffset + caretY - height;
+    let left = positionX + window.pageXOffset + caretX - width / 2;
+    let space = 8; // The caret plus one pixle for some space, you can increase it.
+  
+    // yAlign could be: `top`, `bottom`, `center`
+    if (yAlign === "top") {
+      top += height + space;
+    } else if (yAlign === "center") {
+      top += height / 2;
+    } else if (yAlign === "bottom") {
+      top -= space;
+    }
+  
+    // xAlign could be: `left`, `center`, `right`
+    if (xAlign === "left") {
+      left += width / 2 - tooltipModel.xPadding - space / 2;
+      if (yAlign === "center") {
+        left += space * 2;
+      }
+    } else if (xAlign === "right") {
+      left -= width / 2;
+      if (yAlign === "center") {
+        left -= space;
+      } else {
+        left += space;
+      }
+    }
+  
+    // Display, position, and set styles for font
+    tooltipEl.style.opacity = 1;
+  
+    // Left and right
+    tooltipEl.style.top = `${top}px`;
+    tooltipEl.style.left = `${left}px`;
+  
+    // Font
+    tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
+    tooltipEl.style.fontSize = tooltipModel.bodyFontSize + "px";
+    tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
+  
+    // Paddings
+    tooltipEl.style.padding = tooltipModel.yPadding + "px " + tooltipModel.xPadding + "px";
+}
+
 var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
     type: 'line',
@@ -98,13 +219,15 @@ var myChartline = new Chart(ctx2, {
         mode: 'index',
       },
     plugins:{
-        tooltips: {
-            enabled: false,
-            intersect: false,
-            mode: "index",
-            position: "average",
-          }
+        
     },
+    tooltips: {
+        enabled: false,
+        intersect: false,
+        mode: "index",
+        position: "average",
+        custom: customTooltips
+    }
     
     //線的插入點
 });            
