@@ -32,7 +32,7 @@ var plugin = {//資料點上的線
 
 Tooltip.positioners.myCustomPositioner = function(elements, eventPosition) {
     // A reference to the tooltip model
-    const tooltip = this;
+    const chart = this.chart;
     /* ... */
     return {
         x: 0,
