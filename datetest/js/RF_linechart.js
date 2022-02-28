@@ -1,4 +1,4 @@
-import { Tooltip } from 'chart.js';
+
 var real_x = [];
 var real_y = [];
 var linex1 = [];//線型pmf的y軸
@@ -27,7 +27,7 @@ var plugin = {//資料點上的線
         }
     },
     tooltip:{
-        positioners:[bottom]
+        positioners:[myCustomPositioner]
     }
 };
 
@@ -51,11 +51,13 @@ var bottom = function(items) {
 
 var myCustomPositioner  = function(elements, eventPosition) {
     // A reference to the tooltip model
-    const chart = this.chart;
+    var chart = this.chart;
     /* ... */
     return {
         x: 0,
-        y: 0
+        y: 0,
+        xAlign: 'center',
+        yAlign: 'bottom',
         // You may also include xAlign and yAlign to override those tooltip options.
     };
 };
