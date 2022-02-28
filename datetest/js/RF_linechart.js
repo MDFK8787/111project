@@ -25,10 +25,12 @@ var plugin = {//資料點上的線
             ctx.restore();
         }
     },
-    tooltip:[components]
+    tooltip:{
+        positioners:[bottom]
+    }
 };
 
-components.Tooltip.positioners.bottom = function(items) {
+var bottom = function(items) {
     var pos = components.Tooltip.positioners.average(items);
   
     // Happens when nothing is found
