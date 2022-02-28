@@ -158,8 +158,8 @@ var myChartline = new Chart(ctx2, {
             label: 'linepmf1',
             fill: true,
             data: linex1,
-            backgroundColor:'6AAFCA',
-            borderColor:'6AAFCA',
+            backgroundColor:'rgba(0, 0, 0, 0)',
+            borderColor:'rgba(0, 0, 0, 0)',
             tension:1
         },{
             label:false,
@@ -167,8 +167,8 @@ var myChartline = new Chart(ctx2, {
             data:data,
             pointHitRadius: 0,
             showLine:true,//顯示出線
-            backgroundColor:'rgba(255, 0, 0, 0.3)',
-            borderColor:'rgba(255, 0, 0, 0.3)',
+            backgroundColor:'rgba(106, 175, 202, 0.3)',
+            borderColor:'rgba(106, 175, 202, 0.3)',
             type: 'scatter'
         }
     ]
