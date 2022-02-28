@@ -27,72 +27,6 @@ var scaleFactor = 100
         }
     }
 };*/
-Chart.defaults.global.pointHitDetectionRadius = 1;
-var customTooltips = function(tooltip) {
-    var tooltipEl = document.getElementById('chartjs-tooltip');
-    if (!tooltipEl) {
-        tooltipEl = document.createElement('div');
-        tooltipEl.id = 'chartjs-tooltip';
-        tooltipEl.innerHTML = "<div class='wrapper'></div>"
-        document.body.appendChild(tooltipEl);
-    }
-
-    // Hide if no tooltip
-    if (tooltip.opacity === 0) {
-        tooltipEl.style.opacity = 0;
-        return;
-    }
-
-    // Set caret Position
-    tooltipEl.classList.remove('above', 'below', 'no-transform');
-    if (tooltip.yAlign) {
-        tooltipEl.classList.add(tooltip.yAlign);
-    } else {
-        tooltipEl.classList.add('no-transform');
-    }
-
-    function getBody(bodyItem) {
-        return bodyItem.lines;
-    }
-
-    // Set Text
-    if (tooltip.body) {
-        var titleLines = tooltip.title || [];
-        var bodyLines = tooltip.body.map(getBody);
-
-        var innerHtml = '';
-
-        titleLines.forEach(function(title) {
-            innerHtml += '<span style="margin-bottom: 10px;display: inline-block;">' + title + '</span>';
-        });
-        innerHtml += '<div style="display: flex;flex-direction: row;">';
-
-        bodyLines.forEach(function(body, i) {
-            var parts = body[0].split(':');
-            innerHtml += '<div style="display: flex;flex-direction: column;margin-right: 10px;font-size: 12px;">';
-            innerHtml += '<span>' + parts[0].trim() + '</span>';
-            innerHtml += '<b>' + parts[1].trim() + '</b>';
-            innerHtml += '</div>';
-        });
-        innerHtml += '</div>';
-
-        var root = tooltipEl.querySelector('.wrapper');
-        root.innerHTML = innerHtml;
-    }
-
-    var canvas = this._chart.canvas;
-    tooltipEl.style.opacity = 1;
-    tooltipEl.style.left = canvas.offsetLeft + tooltip.caretX + 'px';
-    tooltipEl.style.top = canvas.offsetTop + tooltip.caretY + 'px';
-    tooltipEl.style.fontFamily = tooltip._fontFamily;
-    tooltipEl.style.fontSize = tooltip.fontSize;
-    tooltipEl.style.fontStyle = tooltip._fontStyle;
-    tooltipEl.style.padding = "10px";
-    tooltipEl.style.border = "1px solid #B4B6C1";
-    tooltipEl.style.backgroundColor = "#FFFFFF";
-    tooltipEl.style.color = "#4C4F59";
-    tooltipEl.style.fontFamily = '"open sans", "helvetica neue", "arial", "sans-serif"';
-};
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
@@ -120,7 +54,7 @@ var myChartline = new Chart(ctx2, {
     },
     options: {
         title:{
-            display:false
+            display:false,
         },
         maintainAspectRatio: false,
         elements:{
@@ -169,7 +103,6 @@ var myChartline = new Chart(ctx2, {
             intersect: false,
             mode: "index",
             position: "average",
-            custom: customTooltips
           }
     },
     
