@@ -26,11 +26,11 @@ var plugin = {//資料點上的線
         }
     },
     tooltip:{
-        position:'myCustomPositioner'
+        position:[myCustomPositioner]
     }
 };
 
-Tooltip.positioners.myCustomPositioner = function(elements, eventPosition) {
+var myCustomPositioner  = function(elements, eventPosition) {
     // A reference to the tooltip model
     const chart = this.chart;
     /* ... */
