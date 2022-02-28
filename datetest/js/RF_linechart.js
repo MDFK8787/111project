@@ -8,10 +8,6 @@ var scaleFactor = 100
       sigma = 80;
 
 var plugin = {//資料點上的線
-    tooltip:{
-        yAlign: 'top',
-        xAlign: 'center',
-    },
     afterDatasetsDraw: function(chart) {
        if(chart.tooltip._active && chart.tooltip._active.length) {
             var activePoint = chart.tooltip._active[0];
@@ -129,7 +125,11 @@ var myChartline = new Chart(ctx2, {
         intersect: false,
         mode: 'index',
       },
-    plugins:[plugin]
+    plugins:[plugin],
+    tooltip:{
+        yAlign: 'top',
+        xAlign: 'center',
+    },
     //線的插入點
 });            
 
