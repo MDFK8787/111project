@@ -14,7 +14,7 @@ var plugin = {//資料點上的線
             var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
             //console.log(chart.chartArea.bottom)//找線的上下點
-            console.log(myChartline.options.plugins.tooltip.y)
+            console.log(myChartline.options.plugins.tooltip.bottom)
             ctx.save();
             ctx.beginPath();
             ctx.setLineDash([5,7]);//虛線
