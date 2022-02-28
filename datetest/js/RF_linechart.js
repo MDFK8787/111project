@@ -167,8 +167,8 @@ var myChartline = new Chart(ctx2, {
             data:data,
             pointHitRadius: 0,
             showLine:true,//顯示出線
-            backgroundColor:'rgba(106, 175, 202, 0.3)',
-            borderColor:'rgba(106, 175, 202, 0.3)',
+            backgroundColor:'rgba(106, 175, 202, 0.66)',
+            borderColor:'rgba(106, 175, 202, 0.66)',
             type: 'scatter'
         }
     ]
