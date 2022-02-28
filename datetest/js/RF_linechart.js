@@ -31,7 +31,7 @@ var scaleFactor = 100
 function customTooltips(tooltipModel) {
     // Tooltip Element
     var tooltipEl = document.getElementById("chartjs-tooltip");
-  
+    console.log(tooltipEl)
     const yAlign = tooltipModel.yAlign;
     const xAlign = tooltipModel.xAlign;
   
