@@ -27,7 +27,7 @@ var scaleFactor = 100
         }
     }
 };*/
-
+Chart.defaults.global.pointHitDetectionRadius = 1;
 var customTooltips = function(tooltip) {
     var tooltipEl = document.getElementById('chartjs-tooltip');
     if (!tooltipEl) {
