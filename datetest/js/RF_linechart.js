@@ -1,3 +1,4 @@
+import { Tooltip } from 'chart.js';
 var real_x = [];
 var real_y = [];
 var linex1 = [];//線型pmf的y軸
@@ -31,7 +32,7 @@ var plugin = {//資料點上的線
 };
 
 var bottom = function(items) {
-    var pos = components.Tooltip.positioners.average(items);
+    var pos = Tooltip.positioners.average(items);
   
     // Happens when nothing is found
     if (pos === false) {
@@ -125,7 +126,8 @@ var myChartline = new Chart(ctx2, {
         intersect: false,
         mode: 'index',
       },
-    plugins:[plugin]//線的插入點
+    plugins:[plugin]
+    //線的插入點
 });            
 
 function gaussian(x) {//PDF
