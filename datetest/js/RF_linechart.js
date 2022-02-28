@@ -25,20 +25,18 @@ var plugin = {//資料點上的線
             ctx.restore();
         }
     },
-    tooltips:{
-        
-    }
+    tooltip:[components]
 };
 
 components.Tooltip.positioners.bottom = function(items) {
-    const pos = components.Tooltip.positioners.average(items);
+    var pos = components.Tooltip.positioners.average(items);
   
     // Happens when nothing is found
     if (pos === false) {
       return false;
     }
   
-    const chart = this.chart;
+    var chart = this.chart;
   
     return {
       x: pos.x,
