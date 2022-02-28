@@ -158,8 +158,8 @@ var myChartline = new Chart(ctx2, {
             label: 'linepmf1',
             fill: true,
             data: linex1,
-            backgroundColor:'rgba(0, 0, 0, 0)',
-            borderColor:'rgba(0, 0, 0, 0)',
+            backgroundColor:'6AAFCA',
+            borderColor:'6AAFCA',
             tension:1
         },{
             label:false,
