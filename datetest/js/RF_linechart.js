@@ -27,7 +27,7 @@ var plugin = {//資料點上的線
         }
     },
     tooltip:{
-        yAlign: 'bottom',
+        yAlign: 'top',
         xAlign: 'center',
     }
 };
