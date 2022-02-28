@@ -12,7 +12,7 @@ var plugin = {//資料點上的線
             var activePoint = chart.tooltip._active[0];
             var ctx = chart.ctx;
             var y_axis = chart.scales['y-axis-0'];
-            //console.log(chart.chartArea.bottom)
+            //console.log(chart.chartArea.bottom)//找線的上下點
 
             ctx.save();
             ctx.beginPath();
@@ -24,7 +24,21 @@ var plugin = {//資料點上的線
             ctx.stroke();
             ctx.restore();
         }
+    },
+    tooltip:{
+        position:'myCustomPositioner'
     }
+};
+
+Tooltip.positioners.myCustomPositioner = function(elements, eventPosition) {
+    // A reference to the tooltip model
+    const tooltip = this;
+    /* ... */
+    return {
+        x: 0,
+        y: 0
+        // You may also include xAlign and yAlign to override those tooltip options.
+    };
 };
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
