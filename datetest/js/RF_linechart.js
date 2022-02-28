@@ -121,6 +121,10 @@ var myChartline = new Chart(ctx2, {
             }
         }
     },
+    interaction: {
+        intersect: false,
+        mode: 'index',
+      },
     plugins:[plugin]//線的插入點
 });            
 
