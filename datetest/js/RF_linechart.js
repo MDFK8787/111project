@@ -4,6 +4,8 @@ var real_y = [];
 var linex1 = [];//線型pmf的y軸
 var data = [];//常態分配資料
 var data2 = [];
+var p_data = [];
+var l_data = [];
 var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
       sigma = 80;
@@ -162,6 +164,7 @@ var myChartline = new Chart(ctx2, {
           backgroundColor:'rgba(0, 0, 0, 0)',
           borderColor:'rgba(0, 0, 0, 0)',
           tension:1
+
         },{
           label:false,
           fill: true,
@@ -170,7 +173,17 @@ var myChartline = new Chart(ctx2, {
           showLine:true,//顯示出線
           backgroundColor:'rgba(106, 175, 202, 0.66)',
           borderColor:'rgba(106, 175, 202, 0.66)',
-          type: 'scatter'
+          type: 'scatter',
+          yAxisID:'y'
+        },{
+          label:'test',
+          fill: false,
+          data:0,
+          pointHitRadius: 0,
+          showLine:true,//顯示出線
+          backgroundColor:'rgba(106, 175, 202, 0.66)',
+          borderColor:'rgba(106, 175, 202, 0.66)',
+          yAxisID:'pl_y'
         }
       ]
     },
@@ -200,6 +213,7 @@ var myChartline = new Chart(ctx2, {
                 }
             },
             y: {
+                position:'left',
                 beginAtZero: true,
                 grid:{
                     color:'white'
@@ -212,7 +226,22 @@ var myChartline = new Chart(ctx2, {
                     color:'black',
                     fontcolor:'black'
                 }
-            }
+            },
+            pl_y: {
+              position:'right',
+              beginAtZero: false,
+              grid:{
+                  color:'white'
+              },
+              ticks:{
+                  stepsize: 10,
+                  display: true,
+                  autoSkip: true,
+                  maxTicksLimit: 10,
+                  color:'black',
+                  fontcolor:'black'
+              }
+          }
         }
     },
     interaction: {
