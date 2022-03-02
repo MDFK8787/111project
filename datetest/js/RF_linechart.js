@@ -237,6 +237,8 @@ var myChartline = new Chart(ctx2, {
                 }
             },
             pl_y: {
+              suggestedMin: -100,
+              suggestedMax: 100,
               position:'right',
               beginAtZero: false,
               grid:{
