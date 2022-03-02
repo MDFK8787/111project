@@ -12,13 +12,8 @@ var plchart = new Chart(ctx3, {
             lineTension: 0,
             fill: true,
             data:p,
-            backgroundColor: [
-                'rgba(146, 255, 140, 0.5)',
-            ],
-            borderColor: [
-                'rgba(11, 215, 0, 1)',
-            ],
-
+            backgroundColor: 'rgba(146, 255, 140, 0.5)',
+            borderColor: 'rgba(11, 215, 0, 1)',
             tension:0.4
         },{
             label: 'lost',
@@ -78,7 +73,6 @@ var plchart = new Chart(ctx3, {
 });
 
 function drawPL(botton_id){ 
-    console.log('100');
     console.log(p);
     console.log(l);
     p.length= 0;
@@ -96,6 +90,7 @@ function drawPL(botton_id){
         l.push(null);
         l.push(null);
         plchart.update();
+        myChartline.update()
 
     } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
         p.push(50);
@@ -109,6 +104,7 @@ function drawPL(botton_id){
         l.push(-50);
         l.push(-50);
         plchart.update();
+        myChartline.update()
 
     } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
         p.push(50);
@@ -122,6 +118,7 @@ function drawPL(botton_id){
         l.push(-50);
         l.push(-50);
         plchart.update();
+        myChartline.update()
 
     } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
         p.push(null);
@@ -135,6 +132,7 @@ function drawPL(botton_id){
         l.push(-50);
         l.push(-50);
         plchart.update();
+        myChartline.update()
     }
     console.log(p);
     console.log(l);
