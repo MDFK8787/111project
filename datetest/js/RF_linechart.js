@@ -362,7 +362,7 @@ function drawPL(botton_id){
 
   if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {//將t字帳按的按鈕的所有資料暫存進陣列
     for(i=0;i<linex1.length;i++){
-      if(linex1.length<(linex1.length/2)){
+      if(i<(linex1.length/2)){
         p.push(50)
         l.push(null)
       }else{
