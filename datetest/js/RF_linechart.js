@@ -286,7 +286,7 @@ var myChartline = new Chart(ctx2, {
         display: false
       },
       tooltip: {
-        enabled: false,
+        enabled:true,
         intersect: false,
         mode: "index",
         position: "average",
