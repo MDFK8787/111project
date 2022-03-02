@@ -156,44 +156,43 @@ var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
   type: 'line',
   data: {
-      labels: real_x,
-      datasets: [{
-        label: 'linepmf1',
-        fill: true,
-        data: linex1,
-        backgroundColor:'rgba(0, 0, 0, 0)',
-        borderColor:'rgba(0, 0, 0, 0)',
-        tension:1
-      },{
-        label:false,
-        fill: true,
-        data:data,
-        pointHitRadius: 0,
-        showLine:true,//顯示出線
-        backgroundColor:'rgba(106, 175, 202, 0.66)',
-        borderColor:'rgba(106, 175, 202, 0.66)',
-        type: 'scatter',
-        yAxisID:'y'
-      },{
-        label: 'profit',
-        lineTension: 0,
-        fill: true,
-        data:p,
-        backgroundColor: 'rgba(146, 255, 140, 0.5)',
-        borderColor: 'rgba(11, 215, 0, 1)',
-        tension:0.4,
-        yAxisID:'pl_y'
-      },{
-        label: 'lost',
-        lineTension: 0,
-        fill: true,
-        data:l,
-        backgroundColor:'rgba(255, 104, 171, 0.5)',
-        borderColor:'rgba(255, 99, 132, 1)',
-        tension:0.4,
-        yAxisID:'pl_y'
-      }
-    ]
+    labels: real_x,
+    datasets: [{
+      label: 'linepmf1',
+      fill: true,
+      data: linex1,
+      backgroundColor:'rgba(0, 0, 0, 0)',
+      borderColor:'rgba(0, 0, 0, 0)',
+      tension:1
+    },{
+      label:false,
+      fill: true,
+      data:data,
+      pointHitRadius: 0,
+      showLine:true,//顯示出線
+      backgroundColor:'rgba(106, 175, 202, 0.66)',
+      borderColor:'rgba(106, 175, 202, 0.66)',
+      type: 'scatter',
+      yAxisID:'y'
+    },{
+      label: 'profit',
+      lineTension: 0,
+      fill: true,
+      data:p,
+      backgroundColor: 'rgba(146, 255, 140, 0.5)',
+      borderColor: 'rgba(11, 215, 0, 1)',
+      tension:0.4,
+      yAxisID:'pl_y'
+    },{
+      label: 'lost',
+      lineTension: 0,
+      fill: true,
+      data:l,
+      backgroundColor:'rgba(255, 104, 171, 0.5)',
+      borderColor:'rgba(255, 99, 132, 1)',
+      tension:0.4,
+      yAxisID:'pl_y'
+    }]
   },
   options: {
     maintainAspectRatio: false,
