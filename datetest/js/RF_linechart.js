@@ -285,7 +285,7 @@ function showdate(){//按下確定按鈕執行的地方
     var a1 = date[0];
     var a2 = date[1];
     var a3 = date[2];
-    var gg =a2[a2.length-1]
+    var gg =a2[a2.length-2]
     console.log(gg);
     if (gg==0){
       a2 = a2.replace(0,'')
