@@ -286,15 +286,8 @@ function showdate(){//按下確定按鈕執行的地方
     var a2 = date[1];
     var a3 = date[2];
     var gg =a2[a2.length-2]
-    console.log(gg);
-    if (gg==0){
-      a2 = a2.replace(0,'')
-    }
-    console.log(a1);
-    console.log(a2);
-    console.log(a3);
-    console.log(date);
-    date = date.replace(/-/g,'/');
+    if (gg==0){a2 = a2.replace(0,'')}
+    date = a1 + '/' + a2 + '/' + a3
     time = time.value;
     var select = date+' '+time;//之後用來尋找csv[ 列 ]的名字的變數
     console.log(select);
