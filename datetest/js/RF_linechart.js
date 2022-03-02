@@ -156,23 +156,23 @@ var myChartline = new Chart(ctx2, {
     data: {
         labels: real_x,
         datasets: [{
-            label: 'linepmf1',
-            fill: true,
-            data: linex1,
-            backgroundColor:'rgba(0, 0, 0, 0)',
-            borderColor:'rgba(0, 0, 0, 0)',
-            tension:1
+          label: 'linepmf1',
+          fill: true,
+          data: linex1,
+          backgroundColor:'rgba(0, 0, 0, 0)',
+          borderColor:'rgba(0, 0, 0, 0)',
+          tension:1
         },{
-            label:false,
-            fill: true,
-            data:data,
-            pointHitRadius: 0,
-            showLine:true,//顯示出線
-            backgroundColor:'rgba(106, 175, 202, 0.66)',
-            borderColor:'rgba(106, 175, 202, 0.66)',
-            type: 'scatter'
+          label:false,
+          fill: true,
+          data:data,
+          pointHitRadius: 0,
+          showLine:true,//顯示出線
+          backgroundColor:'rgba(106, 175, 202, 0.66)',
+          borderColor:'rgba(106, 175, 202, 0.66)',
+          type: 'scatter'
         }
-    ]
+      ]
     },
     options: {
         legend:{ 
