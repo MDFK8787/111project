@@ -283,7 +283,7 @@ function showdate(){//按下確定按鈕執行的地方
     date = date.value;
     gg = date[date.length-5]
     if(gg==0){
-      date = date.replacepos(date,6,'');
+      date = date.replace(date,6,'');
     }
     console.log(date);
     date = date.replace(/-/g,'/');
