@@ -299,9 +299,10 @@ function showdate(){//按下確定按鈕執行的地方
 
             var len_json = Object.keys(json).length; //宣告json長度
             for (i=0;i<len_json;i++){
-                //console.log(json[i]);
+                console.log(json[i]);
 
                 var strike = json[i];//將每一個index的陣列分別抓出來讓select可以選日期時間的columns
+                console.log(strike);
                 var strike2 = strike[select];//用日期時間的select選擇陣列
                 console.log(strike2);                     
                 real_y.push(strike2);//將得到的 列 資料放進陣列當中
