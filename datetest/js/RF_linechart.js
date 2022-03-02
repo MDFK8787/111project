@@ -10,26 +10,36 @@ var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
       sigma = 80;
 
-/*var plugin = {//資料點上的線
-    afterDatasetsDraw: function(chart) {
-       if(chart.tooltip._active && chart.tooltip._active.length) {
-            var activePoint = chart.tooltip._active[0];
-            var ctx = chart.ctx;
-            var y_axis = chart.scales['y-axis-0'];
-            //console.log(chart.chartArea.bottom)//找線的上下點
-            console.log(Chart.Tooltip.xAlign)
-            ctx.save();
-            ctx.beginPath();
-            ctx.setLineDash([5,7]);//虛線
-            ctx.moveTo(activePoint.element.x, 32);//讓程式知道要在網頁的哪個座標x顯示線,32是線的最高點
-            ctx.lineTo(activePoint.element.x, 450.07051577800826);//線的最低點
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = 'green';
-            ctx.stroke();
-            ctx.restore();
-        }
+var plugin = {//資料點上的線
+  afterDatasetsDraw: function(chart) {
+    if(chart.tooltip._active && chart.tooltip._active.length) {
+      var activePoint = chart.tooltip._active[0];
+      var ctx = chart.ctx;
+      var y_axis = chart.scales['y-axis-0'];
+      //console.log(chart.chartArea.bottom)//找線的上下點
+      console.log(Chart.Tooltip.xAlign)
+      ctx.save();
+      ctx.beginPath();
+      ctx.setLineDash([5,7]);//虛線
+      ctx.moveTo(activePoint.element.x, 32);//讓程式知道要在網頁的哪個座標x顯示線,32是線的最高點
+      ctx.lineTo(activePoint.element.x, 450.07051577800826);//線的最低點
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = 'green';
+      ctx.stroke();
+      ctx.restore();
     }
-};*/
+  },
+  legend: {
+    display: false
+  },
+  tooltip: {
+    enabled: false,
+    intersect: false,
+    mode: "index",
+    position: "average",
+    custom: customTooltips
+  }
+};
 
 function customTooltips(tooltipModel) {
     // Tooltip Element
@@ -252,21 +262,9 @@ var myChartline = new Chart(ctx2, {
     interaction: {
       intersect: false,
       mode: 'index',
-      },
-    plugins:{
-      legend: {
-        display: false
-      },
-      tooltip: {
-        enabled: false,
-        intersect: false,
-        mode: "index",
-        position: "average",
-        custom: customTooltips
-      }
-    }
+    },
+    plugins:[plugin]//線的插入點
   }
-  //線的插入點
 });            
 
 function gaussian(x) {//PDF
