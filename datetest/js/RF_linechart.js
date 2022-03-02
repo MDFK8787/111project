@@ -4,8 +4,8 @@ var real_y = [];
 var linex1 = [];//線型pmf的y軸
 var data = [];//常態分配資料
 var data2 = [];
-var p_data = [];
-var l_data = [];
+var p = [];//profit
+var l = [];//lost
 var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
       sigma = 80;
@@ -270,10 +270,10 @@ var myChartline = new Chart(ctx2, {
 });            
 
 function gaussian(x) {//PDF
-    var gaussianConstant = 1 / Math.sqrt(2 * Math.PI);
-    x = (x - mean) / sigma;
-    return gaussianConstant * Math.exp(-.5 * x * x) / sigma;
- };
+  var gaussianConstant = 1 / Math.sqrt(2 * Math.PI);
+  x = (x - mean) / sigma;
+  return gaussianConstant * Math.exp(-.5 * x * x) / sigma;
+};
 
 function showdate(){//按下確定按鈕執行的地方
     var date = document.getElementById('date');
@@ -343,4 +343,70 @@ function showdate(){//按下確定按鈕執行的地方
         };
     };
 
+}
+
+function drawPL(botton_id){ 
+  console.log(p);
+  console.log(l);
+  p.length= 0;
+  l.length= 0;
+
+  if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {//將t字帳按的按鈕的所有資料暫存進陣列
+      p.push(50);
+      p.push(50);
+      p.push(0);
+      p.push(-50);
+      p.push(-50);
+      l.push(null);
+      l.push(null);
+      l.push(null);
+      l.push(null);
+      l.push(null);
+      plchart.update();
+      myChartline.update()
+
+  } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
+      p.push(50);
+      p.push(50);
+      p.push(0);
+      p.push(-50);
+      p.push(null);
+      l.push(null);
+      l.push(null);
+      l.push(null);
+      l.push(-50);
+      l.push(-50);
+      plchart.update();
+      myChartline.update()
+
+  } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
+      p.push(50);
+      p.push(50);
+      p.push(null);
+      p.push(null);
+      p.push(null);
+      l.push(null);
+      l.push(50);
+      l.push(0);
+      l.push(-50);
+      l.push(-50);
+      plchart.update();
+      myChartline.update()
+
+  } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
+      p.push(null);
+      p.push(null);
+      p.push(null);
+      p.push(null);
+      p.push(null);
+      l.push(50);
+      l.push(50);
+      l.push(0);
+      l.push(-50);
+      l.push(-50);
+      plchart.update();
+      myChartline.update()
+  }
+  console.log(p);
+  console.log(l);
 }
