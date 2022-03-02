@@ -154,107 +154,105 @@ function customTooltips(tooltipModel) {
 
 var ctx2 = document.getElementById('myChartline').getContext('2d');//RF線型
 var myChartline = new Chart(ctx2, {
-    type: 'line',
-    data: {
-        labels: real_x,
-        datasets: [{
-          label: 'linepmf1',
-          fill: true,
-          data: linex1,
-          backgroundColor:'rgba(0, 0, 0, 0)',
-          borderColor:'rgba(0, 0, 0, 0)',
-          tension:1
-
-        },{
-          label:false,
-          fill: true,
-          data:data,
-          pointHitRadius: 0,
-          showLine:true,//顯示出線
-          backgroundColor:'rgba(106, 175, 202, 0.66)',
-          borderColor:'rgba(106, 175, 202, 0.66)',
-          type: 'scatter',
-          yAxisID:'y'
-        },{
-          label: 'profit',
-          lineTension: 0,
-          fill: true,
-          data:p,
-          backgroundColor: 'rgba(146, 255, 140, 0.5)',
-          borderColor: 'rgba(11, 215, 0, 1)',
-          tension:0.4,
-          yAxisID:'pl_y'
-        },{
-          label: 'lost',
-          lineTension: 0,
-          fill: true,
-          data:l,
-          backgroundColor:'rgba(255, 104, 171, 0.5)',
-          borderColor:'rgba(255, 99, 132, 1)',
-          tension:0.4,
-          yAxisID:'pl_y'
-        }
-      ]
+  type: 'line',
+  data: {
+      labels: real_x,
+      datasets: [{
+        label: 'linepmf1',
+        fill: true,
+        data: linex1,
+        backgroundColor:'rgba(0, 0, 0, 0)',
+        borderColor:'rgba(0, 0, 0, 0)',
+        tension:1
+      },{
+        label:false,
+        fill: true,
+        data:data,
+        pointHitRadius: 0,
+        showLine:true,//顯示出線
+        backgroundColor:'rgba(106, 175, 202, 0.66)',
+        borderColor:'rgba(106, 175, 202, 0.66)',
+        type: 'scatter',
+        yAxisID:'y'
+      },{
+        label: 'profit',
+        lineTension: 0,
+        fill: true,
+        data:p,
+        backgroundColor: 'rgba(146, 255, 140, 0.5)',
+        borderColor: 'rgba(11, 215, 0, 1)',
+        tension:0.4,
+        yAxisID:'pl_y'
+      },{
+        label: 'lost',
+        lineTension: 0,
+        fill: true,
+        data:l,
+        backgroundColor:'rgba(255, 104, 171, 0.5)',
+        borderColor:'rgba(255, 99, 132, 1)',
+        tension:0.4,
+        yAxisID:'pl_y'
+      }
+    ]
+  },
+  options: {
+    maintainAspectRatio: false,
+    elements:{
+      point:{
+        radius:0
+      }
     },
-    options: {
-        maintainAspectRatio: false,
-        elements:{
-            point:{
-                radius:0
-            }
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid:{
+          color:'white'
         },
-        scales: {
-            x: {
-                beginAtZero: true,
-                grid:{
-                    color:'white'
-                },
-                ticks:{
-                    display: true,
-                    stepsize: 10,
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    color:'black',
-                    fontcolor:'black'
-                }
-            },
-            y: {
-                position:'left',
-                beginAtZero: true,
-                grid:{
-                    color:'white'
-                },
-                ticks:{
-                    stepsize: 10,
-                    display: true,
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    color:'black',
-                    fontcolor:'black'
-                }
-            },
-            pl_y: {
-              suggestedMin: -100,
-              suggestedMax: 100,
-              position:'right',
-              beginAtZero: false,
-              grid:{
-                display:false
-              },
-              ticks:{
-                  stepsize: 10,
-                  display: true,
-                  autoSkip: true,
-                  maxTicksLimit: 10,
-                  color:'black',
-                  fontcolor:'black'
-              }
-          }
+        ticks:{
+          display: true,
+          stepsize: 10,
+          autoSkip: true,
+          maxTicksLimit: 10,
+          color:'black',
+          fontcolor:'black'
         }
+      },
+      y: {
+        position:'left',
+        beginAtZero: true,
+        grid:{
+          color:'white'
+        },
+        ticks:{
+          stepsize: 10,
+          display: true,
+          autoSkip: true,
+          maxTicksLimit: 10,
+          color:'black',
+          fontcolor:'black'
+        }
+      },
+      pl_y: {
+        suggestedMin: -100,
+        suggestedMax: 100,
+        position:'right',
+        beginAtZero: false,
+        grid:{
+          display:false
+        },
+        ticks:{
+          stepsize: 10,
+          display: true,
+          autoSkip: true,
+          maxTicksLimit: 10,
+          color:'black',
+          fontcolor:'black'
+        }
+      }
     },
     interaction: {
-        intersect: false,
-        mode: 'index',
+      intersect: false,
+      mode: 'index',
       },
     plugins:{
       legend: {
@@ -268,7 +266,8 @@ var myChartline = new Chart(ctx2, {
         custom: customTooltips
       }
     }
-    //線的插入點
+  }
+  //線的插入點
 });            
 
 function gaussian(x) {//PDF
