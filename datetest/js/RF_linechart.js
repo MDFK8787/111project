@@ -303,7 +303,7 @@ function showdate(){//按下確定按鈕執行的地方
 
                 var strike = json[i];//將每一個index的陣列分別抓出來讓select可以選日期時間的columns
                 var strike2 = strike[select];//用日期時間的select選擇陣列
-                                     
+                console.log(strike2);                     
                 real_y.push(strike2);//將得到的 列 資料放進陣列當中
 
                 var prob = json[i].field1;//抓出index    
