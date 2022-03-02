@@ -3,6 +3,7 @@ var real_x = [];
 var real_y = [];
 var linex1 = [];//線型pmf的y軸
 var data = [];//常態分配資料
+var data2 = [];
 var scaleFactor = 100
       mean = 417,//from   w ww. de m o  2  s .  co  m
       sigma = 80;
@@ -249,7 +250,7 @@ function showdate(){//按下確定按鈕執行的地方
       
     //var url = "https://mdfk8787.github.io/111project/datetest/json/20210930-20211006.json";
     var request = new XMLHttpRequest();
-    request.open("get", "https://mdfk8787.github.io/111project/datetest/json/20211229.json");
+    request.open("get", "https://mdfk8787.github.io/111project/datetest/json/rf/2021/202107.json");
     request.send(null);
     request.onload = function () {
         if (request.status == 200) {
@@ -292,15 +293,15 @@ function showdate(){//按下確定按鈕執行的地方
             });
 
             data.length = 0;
+            data2.length = 0;
             for(x=0;x<linex1.length;x+=1) {
                 var y = gaussian(x)
                 data.push({x:real_x[x],y:y*scaleFactor});
             }
 
-            myChartline.data.datasets[0].data = linex1;//線型y軸紅色區域
-            myChartline.data.datasets[1].data = data;
-            //myChart.update()//讓圖表更新
-            myChartline.update()
+            myChartline.data.datasets[0].data = linex1;//真的機率
+            myChartline.data.datasets[1].data = data;//常態
+            myChartline.update()//讓圖表更新
         };
     };
 
