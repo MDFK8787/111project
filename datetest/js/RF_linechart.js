@@ -281,12 +281,11 @@ function showdate(){//按下確定按鈕執行的地方
     var c = document.getElementById('c');
     //var weekArray = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat');
     date = date.value;
-    console.log(date.length);
     gg = date[date.length-5]
-    console.log(gg);
     if(gg==0){
       date = date.replace(date[date.length-5],'');
     }
+    console.log(date);
     date = date.replace(/-/g,'/');
     time = time.value;
     var select = date+' '+time;//之後用來尋找csv[ 列 ]的名字的變數
