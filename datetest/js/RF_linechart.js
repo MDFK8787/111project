@@ -260,13 +260,16 @@ var myChartline = new Chart(ctx2, {
         mode: 'index',
       },
     plugins:{
-        tooltip: {
-            enabled: false,
-            intersect: false,
-            mode: "index",
-            position: "average",
-            custom: customTooltips
-        }
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: false,
+        intersect: false,
+        mode: "index",
+        position: "average",
+        custom: customTooltips
+      }
     }
     //線的插入點
 });            
