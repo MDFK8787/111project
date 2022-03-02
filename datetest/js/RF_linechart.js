@@ -361,18 +361,14 @@ function drawPL(botton_id){
   l.length= 0;
 
   if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {//將t字帳按的按鈕的所有資料暫存進陣列
-      p.push(50);
-      p.push(50);
-      p.push(0);
-      p.push(-50);
-      p.push(-50);
-      l.push(null);
-      l.push(null);
-      l.push(null);
-      l.push(null);
-      l.push(null);
-      plchart.update();
-      myChartline.update()
+    if(linex1.length<(linex1.length/2)){
+      p.push(50)
+      l.push(null)
+    }else{
+      p.push(-50)
+      l.push(null)
+    }
+    myChartline.update()
 
   } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
       p.push(50);
