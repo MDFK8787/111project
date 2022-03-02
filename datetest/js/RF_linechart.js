@@ -362,14 +362,14 @@ function drawPL(botton_id){
   var slash = 50;
   if (botton_id.id === "button_call_open_price_" + botton_id.name.toString()) {//將t字帳按的按鈕的所有資料暫存進陣列
     for(i=0;i<linex1.length;i++){
-      if(i<((linex1.length/3)-100)){
+      if(i<((linex1.length/2)-100)){
         p.push(50)
         l.push(null)
-      }else if(i<((linex1.length/3)+100) && i>((linex1.length/3)-100)){
+      }else if(i<((linex1.length/2)+100) && i>((linex1.length/2)-100)){
         slash = slash-0.5
         p.push(slash)
         l.push(null)
-      }else if(i>((linex1.length/3)+100)){
+      }else if(i>((linex1.length/2)+100)){
         p.push(-50)
         l.push(null)
       }
