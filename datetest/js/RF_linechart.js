@@ -242,7 +242,7 @@ var myChartline = new Chart(ctx2, {
               position:'right',
               beginAtZero: false,
               grid:{
-                  color:'white'
+                  color:'blue'
               },
               ticks:{
                   stepsize: 10,
