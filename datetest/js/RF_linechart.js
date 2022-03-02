@@ -197,9 +197,6 @@ var myChartline = new Chart(ctx2, {
       ]
     },
     options: {
-        legend:{ 
-            display: false 
-        },
         maintainAspectRatio: false,
         elements:{
             point:{
