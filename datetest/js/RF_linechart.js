@@ -241,7 +241,9 @@ var myChartline = new Chart(ctx2, {
               suggestedMax: 100,
               position:'right',
               beginAtZero: false,
-              grid:'rgba(0,0,0,0)',
+              grid:{
+                display:false
+              },
               ticks:{
                   stepsize: 10,
                   display: true,
