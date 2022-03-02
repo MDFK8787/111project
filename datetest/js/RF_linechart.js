@@ -281,10 +281,7 @@ function showdate(){//按下確定按鈕執行的地方
     var c = document.getElementById('c');
     //var weekArray = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri','Sat');
     date = date.value;
-    gg = date[date.length-5]
-    if(gg==0){
-      date = date.replace(date,6,'');
-    }
+    date = date.split();
     console.log(date);
     date = date.replace(/-/g,'/');
     time = time.value;
