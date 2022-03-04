@@ -377,7 +377,7 @@ function showdate(){//按下確定按鈕執行的地方
             data2.length = 0;
             for(x=0;x<linex1.length;x+=1){
               var y = gaussian(x)
-              if(x<=((linex1.length/2)+100) && x>=((linex1.length/2)-80)){
+              if(x<=((linex1.length/2)+100) && x>=((linex1.length/2)-120)){
                 data.push({x:null,y:null})
                 data2.push({x:real_x[x],y:y*scaleFactor})
               }else{
