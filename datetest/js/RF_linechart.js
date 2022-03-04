@@ -415,8 +415,8 @@ function drawPL(botton_id){
         l.push(-50)
       }
     }
-    myChartline.data.datasets[2].data = p;
-    myChartline.data.datasets[3].data = l;
+    myChartline.data.datasets[3].data = p;
+    myChartline.data.datasets[4].data = l;
     myChartline.update()
 
   } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
@@ -437,8 +437,8 @@ function drawPL(botton_id){
         l.push(-50)
       }
     }
-    myChartline.data.datasets[2].data = p;
-    myChartline.data.datasets[3].data = l;
+    myChartline.data.datasets[3].data = p;
+    myChartline.data.datasets[4].data = l;
     myChartline.update()
 
   } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
@@ -455,8 +455,8 @@ function drawPL(botton_id){
         l.push(-50)
       }
     }
-    myChartline.data.datasets[2].data = p;
-    myChartline.data.datasets[3].data = l;
+    myChartline.data.datasets[3].data = p;
+    myChartline.data.datasets[4].data = l;
     myChartline.update()
 
   } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
@@ -470,8 +470,8 @@ function drawPL(botton_id){
     l.push(0);
     l.push(-50);
     l.push(-50);
-    myChartline.data.datasets[2].data = p;
-    myChartline.data.datasets[3].data = l;
+    myChartline.data.datasets[3].data = p;
+    myChartline.data.datasets[4].data = l;
     myChartline.update()
   }
 }
