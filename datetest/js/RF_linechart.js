@@ -395,8 +395,8 @@ function drawPL(botton_id){
         p.push(slash)
         l.push(null)
       }else if(i>((linex1.length/2)+100)){
-        p.push(-50)
-        l.push(null)
+        p.push(null)
+        l.push(-50)
       }
     }
     myChartline.data.datasets[2].data = p;
@@ -414,7 +414,8 @@ function drawPL(botton_id){
       l.push(null);
       l.push(-50);
       l.push(-50);
-      plchart.update();
+      myChartline.data.datasets[2].data = p;
+      myChartline.data.datasets[3].data = l;
       myChartline.update()
 
   } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
@@ -428,23 +429,23 @@ function drawPL(botton_id){
       l.push(0);
       l.push(-50);
       l.push(-50);
-      plchart.update();
-      myChartline.update()
+    myChartline.data.datasets[2].data = p;
+    myChartline.data.datasets[3].data = l;
+    myChartline.update()
 
   } else if (botton_id.id === "button_put_close_price_" + botton_id.name.toString()) {//item = data_put["code"][bt_id.name],
-      p.push(null);
-      p.push(null);
-      p.push(null);
-      p.push(null);
-      p.push(null);
-      l.push(50);
-      l.push(50);
-      l.push(0);
-      l.push(-50);
-      l.push(-50);
-      plchart.update();
-      myChartline.update()
+    p.push(null);
+    p.push(null);
+    p.push(null);
+    p.push(null);
+    p.push(null);
+    l.push(50);
+    l.push(50);
+    l.push(0);
+    l.push(-50);
+    l.push(-50);
+    myChartline.data.datasets[2].data = p;
+    myChartline.data.datasets[3].data = l;
+    myChartline.update()
   }
-  console.log(p);
-  console.log(l);
 }
