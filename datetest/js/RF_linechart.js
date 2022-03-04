@@ -175,7 +175,7 @@ var myChartline = new Chart(ctx2, {
       borderColor:'rgba(0, 0, 0, 0)',
       tension:1
     },{
-      label:PDF1,
+      label:'PDF1',
       fill: true,
       data:data,
       pointHitRadius: 0,
@@ -185,7 +185,7 @@ var myChartline = new Chart(ctx2, {
       type: 'scatter',
       yAxisID:'y'
     },{
-      label:PDF2,
+      label:'PDF2',
       fill: true,
       data:data2,
       pointHitRadius: 0,
