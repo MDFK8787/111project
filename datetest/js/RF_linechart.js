@@ -175,13 +175,23 @@ var myChartline = new Chart(ctx2, {
       borderColor:'rgba(0, 0, 0, 0)',
       tension:1
     },{
-      label:false,
+      label:PDF1,
       fill: true,
       data:data,
       pointHitRadius: 0,
       showLine:true,//顯示出線
       backgroundColor:'rgba(106, 175, 202, 0.66)',
       borderColor:'rgba(106, 175, 202, 0.66)',
+      type: 'scatter',
+      yAxisID:'y'
+    },{
+      label:PDF2,
+      fill: true,
+      data:data2,
+      pointHitRadius: 0,
+      showLine:true,//顯示出線
+      backgroundColor:'rgba(30, 120, 150, 0.66)',
+      borderColor:'rgba(30, 120, 150, 0.66)',
       type: 'scatter',
       yAxisID:'y'
     },{
@@ -359,20 +369,26 @@ function showdate(){//按下確定按鈕執行的地方
                 }
                 
             };
-            console.log(linex1);
             real_x.sort(function (a, b) {
                 return a - b
             });
 
             data.length = 0;
             data2.length = 0;
-            for(x=0;x<linex1.length;x+=1) {
-                var y = gaussian(x)
+            for(x=0;x<linex1.length;x+=1){
+              var y = gaussian(x)
+              if(x<=((linex1.length/2)+100) && x>=((linex1.length/2)-100)){
+                data.push({x:null,y:null})
+                data2.push({x:real_x[x],y:y*scaleFactor})
+              }else{
                 data.push({x:real_x[x],y:y*scaleFactor});
+                data2.push({x:null,y:null})
+              }
             }
 
             myChartline.data.datasets[0].data = linex1;//真的機率
             myChartline.data.datasets[1].data = data;//常態
+            myChartline.data.datasets[2].data = data2;//常態
             myChartline.update()//讓圖表更新
         };
     };
