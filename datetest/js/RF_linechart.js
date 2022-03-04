@@ -404,19 +404,26 @@ function drawPL(botton_id){
     myChartline.update()
 
   } else if (botton_id.id === "button_call_close_price_" + botton_id.name.toString()) {
-      p.push(50);
-      p.push(50);
-      p.push(0);
-      p.push(-50);
-      p.push(null);
-      l.push(null);
-      l.push(null);
-      l.push(null);
-      l.push(-50);
-      l.push(-50);
-      myChartline.data.datasets[2].data = p;
-      myChartline.data.datasets[3].data = l;
-      myChartline.update()
+    for(i=0;i<linex1.length;i++){
+      if(i<((linex1.length/2)-100)){
+        p.push(50)
+        l.push(null)
+      }else if(i<(linex1.length/2) && i>((linex1.length/2)-100)){
+        slash = slash-0.5
+        p.push(slash)
+        l.push(null)
+      }else if(i<((linex1.length/2)+100) && i>(linex1.length/2)){
+        slash = slash-0.5
+        p.push(null)
+        l.push(slash)
+      }else if(i>((linex1.length/2)+100)){
+        p.push(null)
+        l.push(-50)
+      }
+    }
+    myChartline.data.datasets[2].data = p;
+    myChartline.data.datasets[3].data = l;
+    myChartline.update()
 
   } else if (botton_id.id === "button_put_open_price_" + botton_id.name.toString()) {
       p.push(50);
