@@ -199,8 +199,8 @@ var myChartline = new Chart(ctx2, {
       lineTension: 0,
       fill: true,
       data:p,
-      backgroundColor: 'rgba(172, 219, 147, 0.8)',
-      borderColor: 'rgba(172, 219, 147, 0.8)',
+      backgroundColor: 'rgba(153, 221, 118, 0.8)',
+      borderColor: 'rgba(153, 221, 118, 0.8)',
       tension:0.4,
       yAxisID:'pl_y'
     },{
@@ -208,8 +208,8 @@ var myChartline = new Chart(ctx2, {
       lineTension: 0,
       fill: true,
       data:l,
-      backgroundColor:'rgba(233, 130, 127, 0.8)',
-      borderColor:'rgba(233, 130, 127, 0.8)',
+      backgroundColor:'rgba(251, 126, 123, 0.8)',
+      borderColor:'rgba(251, 126, 123, 0.8)',
       tension:0.4,
       yAxisID:'pl_y'
     }]
@@ -252,8 +252,8 @@ var myChartline = new Chart(ctx2, {
         }
       },
       pl_y: {
-        suggestedMin: -100,
-        suggestedMax: 100,
+        suggestedMin: -70,
+        suggestedMax: 70,
         position:'right',
         beginAtZero: false,
         grid:{
