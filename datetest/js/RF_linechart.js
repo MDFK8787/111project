@@ -180,8 +180,8 @@ var myChartline = new Chart(ctx2, {
       data:data,
       pointHitRadius: 0,
       showLine:true,//顯示出線
-      backgroundColor:'rgba(106, 175, 202, 0.66)',
-      borderColor:'rgba(106, 175, 202, 0.66)',
+      backgroundColor:'rgba(194, 231, 245, 0.66)',
+      borderColor:'rgba(194, 231, 245, 0.66)',
       type: 'scatter',
       yAxisID:'y'
     },{
@@ -190,8 +190,8 @@ var myChartline = new Chart(ctx2, {
       data:data2,
       pointHitRadius: 0,
       showLine:true,//顯示出線
-      backgroundColor:'rgba(30, 120, 150, 0.66)',
-      borderColor:'rgba(30, 120, 150, 0.66)',
+      backgroundColor:'rgba(152, 217, 242, 0.66)',
+      borderColor:'rgba(152, 217, 242, 0.66)',
       type: 'scatter',
       yAxisID:'y'
     },{
