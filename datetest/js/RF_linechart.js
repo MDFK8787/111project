@@ -300,7 +300,7 @@ var myChartline = new Chart(ctx2, {
         intersect: false,
         mode: "index",
         position: "average",
-        custom: customTooltips
+        //custom: customTooltips
       }
     }//線的插入點
   }
